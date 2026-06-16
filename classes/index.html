@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Classes | Stadium 8 Samara</title>
+<meta name="description" content="HIIT, boxing, pilates and acroyoga classes at Stadium 8 Samara. Every class has its own page - message us to reserve." />
+<link rel="canonical" href="https://stadium8.com/classes/" />
+<link rel="alternate" hreflang="en" href="https://stadium8.com/classes/" />
+<link rel="alternate" hreflang="es" href="https://stadium8.com/es/clases/" />
+<link rel="alternate" hreflang="x-default" href="https://stadium8.com/classes/" />
+<link rel="icon" href="/assets/img/logo.png" />
+<link rel="apple-touch-icon" href="/assets/img/logo.png" />
+<meta property="og:title" content="Classes | Stadium 8 Samara" />
+<meta property="og:description" content="HIIT, boxing, pilates and acroyoga classes at Stadium 8 Samara. Every class has its own page - message us to reserve." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://stadium8.com/classes/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/css/style.css?v=1" />
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="/"><img src="/assets/img/logo.png" alt="Stadium 8 Sport Center logo" /> Stadium <b>8</b></a>
+      <div class="navlinks">
+        <a href="/field/">Field &amp; courts</a><a href="/gym/">Gym &amp; training</a><a href="/classes/" class="active">Classes</a><a href="/hours/">Hours &amp; fees</a>
+        <a href="/field/#book" class="btn btn-y" style="padding:.6rem 1.1rem">Book the field</a>
+        <span class="lang"><a class="on" href="/classes/">EN</a>/<a href="/es/clases/">ES</a></span>
+      </div>
+      <button class="menubtn" aria-label="Menu" onclick="var m=document.getElementById('m');m.style.display=m.style.display==='block'?'none':'block'">&#9776;</button>
+    </nav>
+  </div>
+  <div id="m" style="display:none;border-top:1px solid var(--line);padding:14px 22px">
+    <a href="/field/" style="display:block;padding:10px 0">Field &amp; courts</a><a href="/gym/" style="display:block;padding:10px 0">Gym &amp; training</a><a href="/classes/" style="display:block;padding:10px 0">Classes</a><a href="/hours/" style="display:block;padding:10px 0">Hours &amp; fees</a><a href="/field/#book" style="display:block;padding:10px 0;color:var(--yellow);font-weight:700">Book the field</a>
+  </div>
+</header>
+<section class="subhero">
+  <span class="eight">8</span>
+  <div class="wrap subhero-inner">
+    <span class="eyebrow">Move with us</span>
+    <h1>Classes for every <span>level</span></h1>
+    <p class="lead">HIIT, boxing, pilates and acroyoga with Samara's best instructors. Tap a class for the details - message us to reserve.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="classgrid"><a class="classcard" href="/classes/hiit/"><h4>HIIT</h4><p>High-intensity intervals to build strength and burn.</p><span class="go">Learn more &rarr;</span></a><a class="classcard" href="/classes/boxing/"><h4>Boxing</h4><p>Technique, fitness and a serious sweat.</p><span class="go">Learn more &rarr;</span></a><a class="classcard" href="/classes/pilates/"><h4>Pilates</h4><p>Core, control and mobility, low impact.</p><span class="go">Learn more &rarr;</span></a><a class="classcard" href="/classes/acroyoga/"><h4>Acroyoga</h4><p>Balance, trust and play with a partner.</p><span class="go">Learn more &rarr;</span></a></div>
+    <div class="sec-head" style="margin-top:3rem"><span class="kicker">Timetable</span><h2>Weekly schedule</h2></div>
+    <div class="ph">Send us the weekly class timetable and we'll lay it out here - day, time and instructor for each class.</div>
+    <p style="color:var(--muted);margin-top:1rem">Classes are reserved by message. <a class="yellow" href="https://wa.me/50686364357" style="font-weight:700">WhatsApp +506 8636 4357 &rarr;</a></p>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr"></span> Stadium 8 Sport Center &middot; Samara, Costa Rica</span>
+    <span>Built by Pulpería Studio</span>
+  </div>
+</footer>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.querySelectorAll('#m a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('m').style.display='none';});});
+</script>
+</body>
+</html>

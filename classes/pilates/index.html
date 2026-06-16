@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pilates class | Stadium 8 Samara</title>
+<meta name="description" content="Core, control and mobility, low impact." />
+<link rel="canonical" href="https://stadium8.com/classes/pilates/" />
+<link rel="alternate" hreflang="en" href="https://stadium8.com/classes/pilates/" />
+<link rel="alternate" hreflang="es" href="https://stadium8.com/es/clases/pilates/" />
+<link rel="alternate" hreflang="x-default" href="https://stadium8.com/classes/pilates/" />
+<link rel="icon" href="/assets/img/logo.png" />
+<link rel="apple-touch-icon" href="/assets/img/logo.png" />
+<meta property="og:title" content="Pilates class | Stadium 8 Samara" />
+<meta property="og:description" content="Core, control and mobility, low impact." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://stadium8.com/classes/pilates/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/css/style.css?v=1" />
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="/"><img src="/assets/img/logo.png" alt="Stadium 8 Sport Center logo" /> Stadium <b>8</b></a>
+      <div class="navlinks">
+        <a href="/field/">Field &amp; courts</a><a href="/gym/">Gym &amp; training</a><a href="/classes/" class="active">Classes</a><a href="/hours/">Hours &amp; fees</a>
+        <a href="/field/#book" class="btn btn-y" style="padding:.6rem 1.1rem">Book the field</a>
+        <span class="lang"><a class="on" href="/classes/pilates/">EN</a>/<a href="/es/clases/pilates/">ES</a></span>
+      </div>
+      <button class="menubtn" aria-label="Menu" onclick="var m=document.getElementById('m');m.style.display=m.style.display==='block'?'none':'block'">&#9776;</button>
+    </nav>
+  </div>
+  <div id="m" style="display:none;border-top:1px solid var(--line);padding:14px 22px">
+    <a href="/field/" style="display:block;padding:10px 0">Field &amp; courts</a><a href="/gym/" style="display:block;padding:10px 0">Gym &amp; training</a><a href="/classes/" style="display:block;padding:10px 0">Classes</a><a href="/hours/" style="display:block;padding:10px 0">Hours &amp; fees</a><a href="/field/#book" style="display:block;padding:10px 0;color:var(--yellow);font-weight:700">Book the field</a>
+  </div>
+</header>
+<section class="subhero">
+  <span class="eight">8</span>
+  <div class="wrap subhero-inner">
+    <span class="eyebrow">Group class</span>
+    <h1>Pilates</h1>
+    <p class="lead">Core, control and mobility, low impact.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap detail-grid">
+    <div class="prose">
+      <span class="kicker">About the class</span>
+      <h2 style="color:#fff;font-size:clamp(1.7rem,3.5vw,2.4rem);margin:.4rem 0 1rem">Pilates</h2>
+      <p>A short description of this class goes here - what a session looks like, who it suits, and the vibe. Send us a couple of lines and we'll polish it.</p>
+      <div class="ph">Send us the class description, schedule and instructor and we'll fill this page in.</div>
+      <a href="https://wa.me/50686364357" class="btn btn-y" style="margin-top:1.6rem">WhatsApp to reserve +506 8636 4357 &rarr;</a>
+      <p style="color:var(--muted);font-size:.9rem;margin-top:1rem">Classes are reserved by message - no online booking needed.</p>
+    </div>
+    <div class="detail-card">
+      <span class="kicker">Details</span>
+      <div class="row" style="margin-top:.6rem"><div class="lbl">Schedule</div><div class="val">To confirm</div></div>
+      <div class="row"><div class="lbl">Instructor</div><div class="val">To confirm</div></div>
+      <div class="row"><div class="lbl">Level</div><div class="val">To confirm</div></div>
+      <div class="row"><div class="lbl">What to bring</div><div class="val">To confirm</div></div>
+      <a href="/classes/" style="display:inline-block;margin-top:1.2rem;color:var(--yellow);font-weight:700;font-size:.9rem">&larr; All classes</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr"></span> Stadium 8 Sport Center &middot; Samara, Costa Rica</span>
+    <span>Built by Pulpería Studio</span>
+  </div>
+</footer>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.querySelectorAll('#m a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('m').style.display='none';});});
+</script>
+</body>
+</html>

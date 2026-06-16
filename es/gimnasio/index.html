@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gimnasio y entreno | Stadium 8 Sámara</title>
+<meta name="description" content="Gimnasio completo y entrenamiento personal en Stadium 8 Sámara - pesas, máquinas, cardio y coaching para niños y adultos." />
+<link rel="canonical" href="https://stadium8.com/es/gimnasio/" />
+<link rel="alternate" hreflang="en" href="https://stadium8.com/gym/" />
+<link rel="alternate" hreflang="es" href="https://stadium8.com/es/gimnasio/" />
+<link rel="alternate" hreflang="x-default" href="https://stadium8.com/gym/" />
+<link rel="icon" href="/assets/img/logo.png" />
+<link rel="apple-touch-icon" href="/assets/img/logo.png" />
+<meta property="og:title" content="Gimnasio y entreno | Stadium 8 Sámara" />
+<meta property="og:description" content="Gimnasio completo y entrenamiento personal en Stadium 8 Sámara - pesas, máquinas, cardio y coaching para niños y adultos." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://stadium8.com/es/gimnasio/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/css/style.css?v=1" />
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="/es/"><img src="/assets/img/logo.png" alt="Stadium 8 Sport Center logo" /> Stadium <b>8</b></a>
+      <div class="navlinks">
+        <a href="/es/cancha/">Cancha</a><a href="/es/gimnasio/" class="active">Gimnasio</a><a href="/es/clases/">Clases</a><a href="/es/horarios/">Horarios</a>
+        <a href="/es/cancha/#book" class="btn btn-y" style="padding:.6rem 1.1rem">Reservar la cancha</a>
+        <span class="lang"><a href="/gym/">EN</a>/<a class="on" href="/es/gimnasio/">ES</a></span>
+      </div>
+      <button class="menubtn" aria-label="Menu" onclick="var m=document.getElementById('m');m.style.display=m.style.display==='block'?'none':'block'">&#9776;</button>
+    </nav>
+  </div>
+  <div id="m" style="display:none;border-top:1px solid var(--line);padding:14px 22px">
+    <a href="/es/cancha/" style="display:block;padding:10px 0">Cancha</a><a href="/es/gimnasio/" style="display:block;padding:10px 0">Gimnasio</a><a href="/es/clases/" style="display:block;padding:10px 0">Clases</a><a href="/es/horarios/" style="display:block;padding:10px 0">Horarios</a><a href="/es/cancha/#book" style="display:block;padding:10px 0;color:var(--yellow);font-weight:700">Reservar la cancha</a>
+  </div>
+</header>
+<section class="subhero">
+  <span class="eight">8</span>
+  <div class="wrap subhero-inner">
+    <span class="eyebrow">Abierto a diario</span>
+    <h1><span>Gimnasio</span> y entreno</h1>
+    <p class="lead">Un gimnasio completo, entrenamiento personal para niños y adultos, y el espacio para entrenar como más te guste.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap split">
+    <div>
+      <span class="kicker">El gimnasio</span>
+      <h2 style="font-size:clamp(2rem,4.5vw,3.1rem);color:#fff;margin:.4rem 0 .8rem">Levantá, sudá, repetí</h2>
+      <p style="color:var(--muted)">Pesas libres, máquinas y cardio bajo un mismo techo. Entrá por una sesión o entrená con uno de nuestros coaches - sea cual sea tu nivel, hay espacio para trabajar.</p>
+      <ul class="feat-list">
+        <li>Pesas libres y racks</li>
+        <li>Máquinas de resistencia</li>
+        <li>Equipo de cardio</li>
+        <li>Abierto a diario - horario en la página de Horarios y precios</li>
+      </ul>
+      <a href="/es/horarios/" class="btn btn-y" style="margin-top:1.6rem">Horario y tarifas &rarr;</a>
+    </div>
+    <div class="imgslot">[ Espacio para foto - interior del gimnasio: assets/img/gym.jpg ]</div>
+  </div>
+</section>
+<section style="background:#0E0E0E">
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">Uno a uno</span><h2>Entrenamiento personal</h2><p>Programas a medida para niños y adultos, según tus objetivos.</p></div>
+    <div class="ph">Mandanos los datos del entrenador, las opciones de sesión y los precios y armamos esta sección.</div>
+    <a href="https://wa.me/50686364357" class="btn btn-y" style="margin-top:1.4rem">Consultá por entrenamiento &rarr;</a>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr"></span> Stadium 8 Sport Center &middot; Samara, Costa Rica</span>
+    <span>Hecho por Pulpería Studio</span>
+  </div>
+</footer>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.querySelectorAll('#m a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('m').style.display='none';});});
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reservá la cancha | Stadium 8 Sámara</title>
+<meta name="description" content="Reservá la cancha de fútbol, las canchas de bádminton o un cumpleaños en Stadium 8, Sámara. Elegí tu hora, pagás en efectivo." />
+<link rel="canonical" href="https://stadium8.com/es/cancha/" />
+<link rel="alternate" hreflang="en" href="https://stadium8.com/field/" />
+<link rel="alternate" hreflang="es" href="https://stadium8.com/es/cancha/" />
+<link rel="alternate" hreflang="x-default" href="https://stadium8.com/field/" />
+<link rel="icon" href="/assets/img/logo.png" />
+<link rel="apple-touch-icon" href="/assets/img/logo.png" />
+<meta property="og:title" content="Reservá la cancha | Stadium 8 Sámara" />
+<meta property="og:description" content="Reservá la cancha de fútbol, las canchas de bádminton o un cumpleaños en Stadium 8, Sámara. Elegí tu hora, pagás en efectivo." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://stadium8.com/es/cancha/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/css/style.css?v=1" />
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="/es/"><img src="/assets/img/logo.png" alt="Stadium 8 Sport Center logo" /> Stadium <b>8</b></a>
+      <div class="navlinks">
+        <a href="/es/cancha/" class="active">Cancha</a><a href="/es/gimnasio/">Gimnasio</a><a href="/es/clases/">Clases</a><a href="/es/horarios/">Horarios</a>
+        <a href="/es/cancha/#book" class="btn btn-y" style="padding:.6rem 1.1rem">Reservar la cancha</a>
+        <span class="lang"><a href="/field/">EN</a>/<a class="on" href="/es/cancha/">ES</a></span>
+      </div>
+      <button class="menubtn" aria-label="Menu" onclick="var m=document.getElementById('m');m.style.display=m.style.display==='block'?'none':'block'">&#9776;</button>
+    </nav>
+  </div>
+  <div id="m" style="display:none;border-top:1px solid var(--line);padding:14px 22px">
+    <a href="/es/cancha/" style="display:block;padding:10px 0">Cancha</a><a href="/es/gimnasio/" style="display:block;padding:10px 0">Gimnasio</a><a href="/es/clases/" style="display:block;padding:10px 0">Clases</a><a href="/es/horarios/" style="display:block;padding:10px 0">Horarios</a><a href="/es/cancha/#book" style="display:block;padding:10px 0;color:var(--yellow);font-weight:700">Reservar la cancha</a>
+  </div>
+</header>
+<section class="subhero">
+  <span class="eight">8</span>
+  <div class="wrap subhero-inner">
+    <span class="eyebrow">Reservá en línea</span>
+    <h1><span>Cancha</span> y canchas</h1>
+    <p class="lead">Reservá la cancha de fútbol, una cancha de bádminton o una fiesta de cumpleaños - elegí tu hora y pagás en efectivo el mismo día.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">Qué podés reservar</span><h2>Una cancha, todos los juegos</h2></div>
+    <div class="cards" style="grid-template-columns:repeat(3,1fr)"><div class="card"><div><h3>Fútbol</h3><p>Cinco contra cinco, un partido completo o una mejenga. La cancha es tuya por hora.</p></div></div><div class="card"><div><h3>Bádminton</h3><p>Redes puestas, raquetas listas. Reservá una cancha para singles o dobles.</p></div></div><div class="card"><div><h3>Cumpleaños</h3><p>La cancha, el espacio y la energía. Nosotros recibimos, vos celebrás.</p></div></div></div>
+    <div class="ph" style="margin-top:1.6rem">Las tarifas de alquiler y los paquetes de cumpleaños viven en <a class="yellow" href="/es/horarios/">Horarios y precios</a> - mandanos los precios y los agregamos.</div>
+  </div>
+</section>
+<section class="book-sec" id="book">
+  <div class="wrap">
+    <div class="bookbox">
+      <span class="kicker">Reservá en línea</span>
+      <h3>Reservá la cancha</h3>
+      <p>Elegí fútbol, bádminton o una fiesta de cumpleaños, escogé tu hora y listo. Pagás en efectivo el mismo día - sin tarjeta.</p>
+      <div class="cal-placeholder">El calendario de reservas carga acá una vez que el Google Calendar de Stadium 8 (stadiumcr@gmail.com) esté conectado a Cal.com.<br />Llega en el próximo paso del build.</div>
+      <p style="margin-top:1.4rem">¿Mejor por mensaje? <a class="yellow" href="https://wa.me/50686364357" style="font-weight:700">WhatsApp +506 8636 4357 &rarr;</a></p>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr"></span> Stadium 8 Sport Center &middot; Samara, Costa Rica</span>
+    <span>Hecho por Pulpería Studio</span>
+  </div>
+</footer>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.querySelectorAll('#m a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('m').style.display='none';});});
+</script>
+</body>
+</html>
