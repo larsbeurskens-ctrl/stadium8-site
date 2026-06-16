@@ -4,7 +4,7 @@ import pathlib, html as _h
 
 ROOT = pathlib.Path("/Users/larsbeurskens/Documents/stadium8-site")
 SITE = "https://stadium8.com"
-CSSV = "1"
+CSSV = "2"
 
 # ---- brand / contact ----
 PHONE = "+506 8636 4357"

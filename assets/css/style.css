@@ -160,9 +160,11 @@ footer a:hover{color:var(--yellow)}
 .hero .eight{z-index:2}
 .hero-inner{z-index:3}
 
-/* hero v2: copy anchored bottom-left, lighter overlay, readable text */
-.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0}
-.hero-inner{max-width:1180px;width:100%;margin:0 auto 56px;text-shadow:0 1px 16px rgba(0,0,0,.35)}
-.hero h1{max-width:720px}
-.hero::after{background:linear-gradient(180deg,rgba(11,11,11,.30) 0%,rgba(11,11,11,0) 28%,rgba(11,11,11,0) 50%,rgba(11,11,11,.66) 100%)}
-@media(max-width:900px){.hero{min-height:80vh}.hero-inner{margin-bottom:40px}}
+
+/* hero v3: copy centered (works with this clip) */
+.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;padding:0}
+.hero-inner{max-width:760px;width:100%;margin:0 auto;text-align:center;text-shadow:0 2px 20px rgba(0,0,0,.5)}
+.hero p.lead{margin-left:auto;margin-right:auto}
+.hero .cta{justify-content:center}
+.hero::after{background:linear-gradient(180deg,rgba(11,11,11,.34) 0%,rgba(11,11,11,.20) 45%,rgba(11,11,11,.40) 100%)}
+@media(max-width:900px){.hero{min-height:80vh}}
