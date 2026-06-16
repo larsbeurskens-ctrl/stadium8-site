@@ -247,7 +247,7 @@ def home_en():
         cardhtml+=f'<a class="card{c}" href="{href}"><span class="tag">{tag}</span><div><h3>{h}</h3><p>{p}</p></div><span class="go">{go}</span></a>'
     chips="".join(f'<a class="classcard" href="/classes/{c["slug_en"]}/"><h4>{c["en"]}</h4><p>{c["tag_en"]}</p><span class="go">Learn more &rarr;</span></a>' for c in CLASSES)
     return f'''<section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/assets/img/pitch-hero-poster.jpg"><source src="/assets/video/pitch-hero.mp4" type="video/mp4"></video>
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/assets/img/stadium8-hero-poster.jpg"><source src="/assets/video/stadium8-hero.mp4" type="video/mp4"></video>
   <span class="eight">8</span>
   <div class="wrap hero-inner">
     <span class="eyebrow">Samara &middot; Guanacaste &middot; Costa Rica</span>
@@ -412,7 +412,7 @@ def home_es():
         cardhtml+=f'<a class="card{c}" href="{href}"><span class="tag">{tag}</span><div><h3>{h}</h3><p>{p}</p></div><span class="go">{go}</span></a>'
     chips="".join(f'<a class="classcard" href="/es/clases/{c["slug_es"]}/"><h4>{c["es"]}</h4><p>{c["tag_es"]}</p><span class="go">Ver más &rarr;</span></a>' for c in CLASSES)
     return f'''<section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/assets/img/pitch-hero-poster.jpg"><source src="/assets/video/pitch-hero.mp4" type="video/mp4"></video>
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/assets/img/stadium8-hero-poster.jpg"><source src="/assets/video/stadium8-hero.mp4" type="video/mp4"></video>
   <span class="eight">8</span>
   <div class="wrap hero-inner">
     <span class="eyebrow">Sámara &middot; Guanacaste &middot; Costa Rica</span>
