@@ -115,7 +115,7 @@ def book_block(lang):
     <div class="bookbox">
       <span class="kicker">Reserve online</span>
       <h3>Book the field</h3>
-      <p>Choose football, badminton or a birthday party, pick your time and you're set. Pay cash on the day - no card needed.</p>
+      <p>Choose football, open-court sports or a birthday party, pick your time and you're set. Pay cash on the day - no card needed.</p>
       <div class="cal-placeholder">Booking calendar loads here once the Stadium 8 Google Calendar (stadiumcr@gmail.com) is connected to Cal.com.<br />Coming in the next build step.</div>
       <p style="margin-top:1.4rem">Prefer to message us? <a class="yellow" href="{WA}" style="font-weight:700">WhatsApp {PHONE} &rarr;</a></p>
     </div>
@@ -126,7 +126,7 @@ def book_block(lang):
     <div class="bookbox">
       <span class="kicker">Reservá en línea</span>
       <h3>Reservá la cancha</h3>
-      <p>Elegí fútbol, bádminton o una fiesta de cumpleaños, escogé tu hora y listo. Pagás en efectivo el mismo día - sin tarjeta.</p>
+      <p>Elegí fútbol, deportes de cancha o un cumpleaños, escogé tu hora y listo. Pagás en efectivo el mismo día - sin tarjeta.</p>
       <div class="cal-placeholder">El calendario de reservas carga acá una vez que el Google Calendar de Stadium 8 (stadiumcr@gmail.com) esté conectado a Cal.com.<br />Llega en el próximo paso del build.</div>
       <p style="margin-top:1.4rem">¿Mejor por mensaje? <a class="yellow" href="{WA}" style="font-weight:700">WhatsApp {PHONE} &rarr;</a></p>
     </div>
@@ -135,16 +135,16 @@ def book_block(lang):
 
 def smoothie_band(lang):
     if lang=="en":
-        return f'''<section class="smoothie">
+        return f'''<section class="smoothie" id="smoothie">
   <div class="wrap">
-    <div><span style="font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem">Refresh. Refuel. Repeat.</span><h2>Visit the smoothie bar</h2></div>
-    <p>Cold drinks always on. Stop by reception for a fresh smoothie before or after you train.</p>
+    <div><span style="font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem">Watch. Refuel. Repeat.</span><h2>The sports bar</h2></div>
+    <p>Live football on the big screen, cold drinks and snacks. Beer ₡1,500 · Powerade ₡1,500 · Water ₡1,000 · Fresco ₡1,000. Fast food coming soon.</p>
   </div>
 </section>'''
-    return f'''<section class="smoothie">
+    return f'''<section class="smoothie" id="smoothie">
   <div class="wrap">
-    <div><span style="font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem">Refrescá. Recargá. Repetí.</span><h2>Pasá por el bar de batidos</h2></div>
-    <p>Bebidas frías siempre listas. Pasá por recepción por un batido fresco antes o después de entrenar.</p>
+    <div><span style="font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem">Mirá. Recargá. Repetí.</span><h2>El bar deportivo</h2></div>
+    <p>Fútbol en vivo en pantalla grande, bebidas frías y algo para picar. Cerveza ₡1.500 · Powerade ₡1.500 · Agua ₡1.000 · Fresco ₡1.000. Comida rápida muy pronto.</p>
   </div>
 </section>'''
 
@@ -153,7 +153,7 @@ def contact_block(lang):
         return f'''<div class="contact">
   <div class="info">
     <p class="lbl">Opening hours</p>
-    <div class="ph"><b>To confirm.</b> Send us your daily opening hours and we'll drop them straight in.</div>
+    <p>Mon-Fri from 7am, including evening training · Sat 7am-3pm · Sun closed</p>
     <p class="lbl" style="margin-top:1.4rem">Find us</p>
     <p>{ADDR}</p>
     <p class="lbl">Contact</p>
@@ -166,7 +166,7 @@ def contact_block(lang):
     return f'''<div class="contact">
   <div class="info">
     <p class="lbl">Horario</p>
-    <div class="ph"><b>Por confirmar.</b> Mandanos tu horario diario y lo dejamos puesto al toque.</div>
+    <p>Lun-Vie desde 7am, incluye entreno de la tarde · Sáb 7am-3pm · Dom cerrado</p>
     <p class="lbl" style="margin-top:1.4rem">Dónde estamos</p>
     <p>{ADDR}</p>
     <p class="lbl">Contacto</p>
@@ -179,28 +179,64 @@ def contact_block(lang):
 
 # ====================== CLASSES ======================
 CLASSES = [
-  {"key":"hiit","slug_en":"hiit","slug_es":"hiit","en":"HIIT","es":"HIIT",
-   "tag_en":"High-intensity intervals to build strength and burn.","tag_es":"Intervalos de alta intensidad para fuerza y quema."},
-  {"key":"boxing","slug_en":"boxing","slug_es":"boxeo","en":"Boxing","es":"Boxeo",
-   "tag_en":"Technique, fitness and a serious sweat.","tag_es":"Técnica, estado físico y sudor del bueno."},
-  {"key":"pilates","slug_en":"pilates","slug_es":"pilates","en":"Pilates","es":"Pilates",
-   "tag_en":"Core, control and mobility, low impact.","tag_es":"Core, control y movilidad, bajo impacto."},
-  {"key":"acroyoga","slug_en":"acroyoga","slug_es":"acroyoga","en":"Acroyoga","es":"Acroyoga",
-   "tag_en":"Balance, trust and play with a partner.","tag_es":"Equilibrio, confianza y juego en pareja."},
+  {"key":"hybrid","slug_en":"hybrid-training","slug_es":"entrenamiento-hibrido","en":"Hybrid Training","es":"Entrenamiento Híbrido",
+   "tag_en":"Strength + cardio. Build muscle and endurance in one session.","tag_es":"Fuerza + cardio. Músculo y resistencia en una sola sesión.",
+   "desc_en":"Strength and cardio in one program, so you never have to choose between being strong and having endurance. Every session is different (zero boredom): you build real muscle and strength, improve your stamina, burn fat faster and perform better both in the gym and outside it. Run by Samara Workout with coach Noe.",
+   "desc_es":"Fuerza y cardio en un solo programa, para que no tengás que elegir entre ser fuerte o tener resistencia. Cada sesión es diferente (cero aburrimiento): ganás músculo y fuerza real, mejorás tu resistencia, quemás grasa más rápido y rendís mejor dentro y fuera del gym. A cargo de Samara Workout con el entrenador Noe.",
+   "sched_en":"Mon-Fri 7am &amp; 8pm · Sat 7am &amp; 3pm · Extra 6am on Mon/Wed/Fri","sched_es":"Lun-Vie 7am y 8pm · Sáb 7am y 3pm · Extra 6am Lun/Mié/Vie",
+   "inst":"Noe - Samara Workout","level_en":"All levels","level_es":"Todos los niveles",
+   "price_en":"₡25,000 / month · ₡10,000 / week · ₡3,000 / day","price_es":"₡25.000 / mes · ₡10.000 / semana · ₡3.000 / día",
+   "wa":WA,"wal_en":f"WhatsApp to reserve {PHONE}","wal_es":f"WhatsApp para reservar {PHONE}"},
+
+  {"key":"martial","slug_en":"martial-arts","slug_es":"artes-marciales","en":"Martial Arts","es":"Artes Marciales",
+   "tag_en":"Brazilian Jiu-Jitsu &amp; MMA for adults, teens and kids.","tag_es":"Jiu-Jitsu Brasileño y MMA para adultos, jóvenes y niños.",
+   "desc_en":"Grappling and striking with Pura Vida Martial Arts: Brazilian Jiu-Jitsu (Gi and No-Gi) and MMA. Adults, teenagers and kids, all levels welcome. Train hard, stay humble, live Pura Vida - all levels, all goals, one family.",
+   "desc_es":"Grappling y striking con Pura Vida Martial Arts: Jiu-Jitsu Brasileño (con Gi y sin Gi) y MMA. Adultos, jóvenes y niños, todos los niveles bienvenidos. Entrená duro, mantené la humildad, viví la pura vida - todos los niveles, todas las metas, una sola familia.",
+   "sched_en":"Adults BJJ: Mon/Wed/Fri 10-11am &amp; 5-6pm, Tue/Thu 9:30-10:30am &amp; 5-6pm · Kids: Mon&amp;Wed / Tue&amp;Thu 3:30-4:30pm, Sat 10:15-11:15am","sched_es":"BJJ adultos: Lun/Mié/Vie 10-11am y 5-6pm, Mar/Jue 9:30-10:30am y 5-6pm · Niños: Lun y Mié / Mar y Jue 3:30-4:30pm, Sáb 10:15-11:15am",
+   "inst":"Oli - Pura Vida Martial Arts","level_en":"All levels · adults, teens &amp; kids","level_es":"Todos los niveles · adultos, jóvenes y niños",
+   "price_en":"Ask Oli for class prices","price_es":"Consultá los precios con Oli",
+   "wa":"https://wa.me/50686162810","wal_en":"WhatsApp Oli +506 8616 2810","wal_es":"WhatsApp Oli +506 8616 2810"},
+
+  {"key":"pilates","slug_en":"pilates-reformer","slug_es":"pilates-reformer","en":"Pilates Reformer","es":"Pilates Reformer",
+   "tag_en":"Low-impact, fast results. Posture, core and flexibility.","tag_es":"Bajo impacto, resultados rápidos. Postura, core y flexibilidad.",
+   "desc_en":"Personalized Reformer Pilates on 2 beds plus a Wunda chair, in small groups of up to 3 and adapted to every level. Low impact with fast results: improve your posture and ease chronic pain by strengthening the core, gain flexibility, sharpen concentration and coordination, and use the breath as part of every movement.",
+   "desc_es":"Pilates Reformer personalizado en 2 camas más una silla Wunda, en grupos pequeños de máximo 3 y adaptado a todos los niveles. Bajo impacto con resultados rápidos: mejorá tu postura y eliminá dolores crónicos fortaleciendo el core, ganá flexibilidad, trabajá la concentración y la coordinación, y usá la respiración como parte del movimiento.",
+   "sched_en":"Mon-Fri 8am-5pm","sched_es":"Lun-Vie 8am-5pm",
+   "inst":"Wellness studio","level_en":"All levels · max 3 per class","level_es":"Todos los niveles · máx. 3 por clase",
+   "price_en":"Ask for class prices","price_es":"Consultá los precios",
+   "wa":WA,"wal_en":f"WhatsApp to reserve {PHONE}","wal_es":f"WhatsApp para reservar {PHONE}"},
+
+  {"key":"spinning","slug_en":"spinning","slug_es":"spinning","en":"Spinning","es":"Spinning",
+   "tag_en":"Intense cardio on the bike. Low impact, big burn.","tag_es":"Cardio intenso en la bici. Bajo impacto, gran quema.",
+   "desc_en":"Personalized spinning on 5 bikes, in small groups of up to 5 and open to every level. Burn calories and build endurance with intense cardiovascular training: tone legs and glutes, release endorphins and use your breath to guide the movement, all in a low-impact session.",
+   "desc_es":"Spinning personalizado en 5 bicicletas, en grupos pequeños de máximo 5 y para todos los niveles. Quemá calorías y mejorá tu resistencia con entrenamiento cardiovascular intenso: tonificá piernas y glúteos, liberá endorfinas y usá la respiración para guiar el movimiento, todo en una sesión de bajo impacto.",
+   "sched_en":"Selected days 4:30-5:30pm &amp; 5:30-6:30pm","sched_es":"Días seleccionados 4:30-5:30pm y 5:30-6:30pm",
+   "inst":"Wellness studio","level_en":"All levels · max 5 per class","level_es":"Todos los niveles · máx. 5 por clase",
+   "price_en":"Ask for class prices","price_es":"Consultá los precios",
+   "wa":WA,"wal_en":f"WhatsApp to reserve {PHONE}","wal_es":f"WhatsApp para reservar {PHONE}"},
+
+  {"key":"pt","slug_en":"personal-training","slug_es":"entrenamiento-personal","en":"Personal Training","es":"Entrenamiento Personal",
+   "tag_en":"One-on-one coaching built around your goals.","tag_es":"Entrenamiento uno a uno según tus metas.",
+   "desc_en":"One-on-one coaching with Jeffry Z., a certified personal trainer and Human Movement Sciences (Physical Education) student. Whether it's weight loss, muscle gain or simply better health, you get a plan tailored to you: customized workout plans, one-on-one sessions and online coaching. Book a free consultation to start.",
+   "desc_es":"Entrenamiento uno a uno con Jeffry Z., entrenador personal certificado y estudiante de Ciencias del Movimiento Humano (Educación Física). Ya sea bajar de peso, ganar músculo o simplemente estar más sano, recibís un plan hecho para vos: rutinas personalizadas, sesiones uno a uno y coaching en línea. Reservá una consulta gratis para empezar.",
+   "sched_en":"By appointment","sched_es":"Con cita previa",
+   "inst":"Jeffry Z. - certified trainer","level_en":"All levels · kids &amp; adults","level_es":"Todos los niveles · niños y adultos",
+   "price_en":"Free first consultation · ask for session rates","price_es":"Primera consulta gratis · consultá las tarifas",
+   "wa":"https://wa.me/50683423808","wal_en":"WhatsApp Jeffry +506 8342 3808","wal_es":"WhatsApp Jeffry +506 8342 3808"},
 ]
 
 def class_detail(c, lang):
     name = c[lang]; tag = c["tag_"+lang]
     if lang=="en":
-        back="/classes/"; T={"eyebrow":"Group class","reserve":"Reserve your spot","about":"About the class",
-            "ph_about":"A short description of this class goes here - what a session looks like, who it suits, and the vibe. Send us a couple of lines and we'll polish it.",
-            "details":"Details","sched":"Schedule","inst":"Instructor","level":"Level","bring":"What to bring",
-            "tbc":"To confirm","cta":f"Classes are reserved by message - no online booking needed.","wa":f"WhatsApp to reserve {PHONE}"}
+        back="/classes/"; back_label="All classes"
+        T={"eyebrow":"Class","about":"About the class","details":"Details","sched":"Schedule","inst":"Instructor","level":"Level","price":"Price",
+           "note":"Classes are reserved by message - no online booking needed. Times can change; the trainer can update this anytime."}
     else:
-        back="/es/clases/"; T={"eyebrow":"Clase grupal","reserve":"Reservá tu lugar","about":"Sobre la clase",
-            "ph_about":"Acá va una descripción corta de la clase - cómo es una sesión, para quién es y la onda. Mandanos un par de líneas y la pulimos.",
-            "details":"Detalles","sched":"Horario","inst":"Instructor","level":"Nivel","bring":"Qué traer",
-            "tbc":"Por confirmar","cta":"Las clases se reservan por mensaje - sin reserva en línea.","wa":f"WhatsApp para reservar {PHONE}"}
+        back="/es/clases/"; back_label="Todas las clases"
+        T={"eyebrow":"Clase","about":"Sobre la clase","details":"Detalles","sched":"Horario","inst":"Instructor","level":"Nivel","price":"Precio",
+           "note":"Las clases se reservan por mensaje - sin reserva en línea. Los horarios pueden cambiar; el entrenador lo puede actualizar cuando quiera."}
+    desc=c["desc_"+lang]; sched=c["sched_"+lang]; inst=c["inst"]; level=c["level_"+lang]; price=c["price_"+lang]
+    wa=c["wa"]; wal=c["wal_"+lang]
     return f'''<section class="subhero">
   <span class="eight">8</span>
   <div class="wrap subhero-inner">
@@ -214,18 +250,17 @@ def class_detail(c, lang):
     <div class="prose">
       <span class="kicker">{T["about"]}</span>
       <h2 style="color:#fff;font-size:clamp(1.7rem,3.5vw,2.4rem);margin:.4rem 0 1rem">{name}</h2>
-      <p>{T["ph_about"]}</p>
-      <div class="ph">Send us the class description, schedule and instructor and we'll fill this page in.</div>
-      <a href="{WA}" class="btn btn-y" style="margin-top:1.6rem">{T["wa"]} &rarr;</a>
-      <p style="color:var(--muted);font-size:.9rem;margin-top:1rem">{T["cta"]}</p>
+      <p>{desc}</p>
+      <a href="{wa}" class="btn btn-y" style="margin-top:1.6rem">{wal} &rarr;</a>
+      <p style="color:var(--muted);font-size:.9rem;margin-top:1rem">{T["note"]}</p>
     </div>
     <div class="detail-card">
       <span class="kicker">{T["details"]}</span>
-      <div class="row" style="margin-top:.6rem"><div class="lbl">{T["sched"]}</div><div class="val">{T["tbc"]}</div></div>
-      <div class="row"><div class="lbl">{T["inst"]}</div><div class="val">{T["tbc"]}</div></div>
-      <div class="row"><div class="lbl">{T["level"]}</div><div class="val">{T["tbc"]}</div></div>
-      <div class="row"><div class="lbl">{T["bring"]}</div><div class="val">{T["tbc"]}</div></div>
-      <a href="{back}" style="display:inline-block;margin-top:1.2rem;color:var(--yellow);font-weight:700;font-size:.9rem">&larr; {"All classes" if lang=="en" else "Todas las clases"}</a>
+      <div class="row" style="margin-top:.6rem"><div class="lbl">{T["sched"]}</div><div class="val">{sched}</div></div>
+      <div class="row"><div class="lbl">{T["inst"]}</div><div class="val">{inst}</div></div>
+      <div class="row"><div class="lbl">{T["level"]}</div><div class="val">{level}</div></div>
+      <div class="row"><div class="lbl">{T["price"]}</div><div class="val">{price}</div></div>
+      <a href="{back}" style="display:inline-block;margin-top:1.2rem;color:var(--yellow);font-weight:700;font-size:.9rem">&larr; {back_label}</a>
     </div>
   </div>
 </section>'''
@@ -234,12 +269,12 @@ print("blocks loaded")
 # ====================== EN BODIES ======================
 def home_en():
     cards = [
-      ("feature","Book online","Field &amp; courts","Football, badminton and birthday parties. Reserve your slot in seconds.","Book the field &rarr;","/field/#book"),
+      ("feature","Book online","Field &amp; courts","Football 5, open-court sports and birthday parties. Reserve in seconds.","Book the field &rarr;","/field/#book"),
       ("","Open daily","Full gym","Free weights, machines and cardio. Drop in or train with a coach.","More &rarr;","/gym/"),
-      ("","All levels","Group classes","HIIT, boxing, pilates and acroyoga with Samara's best instructors.","See the timetable &rarr;","/classes/"),
+      ("","All levels","Group classes","Hybrid training, martial arts, pilates and spinning with Samara's own coaches.","See the classes &rarr;","/classes/"),
       ("","One on one","Personal training","Custom programmes for kids and adults, built around your goals.","More &rarr;","/gym/"),
       ("","Parties","Birthday parties","The field, the space and the energy. We host, you celebrate.","Enquire &rarr;","/field/#book"),
-      ("","Refuel","Smoothie bar","Cold drinks and fresh smoothies waiting at reception.","More &rarr;","#smoothie"),
+      ("","Watch the match","Sports bar","Live football, cold drinks and snacks. Fast food coming soon.","More &rarr;","#smoothie"),
     ]
     cardhtml=""
     for cls,tag,h,p,go,href in cards:
@@ -271,9 +306,9 @@ def home_en():
       <ul class="feat-list">
         <li>Full gym - free weights, machines and cardio</li>
         <li>Football field for matches, pick-up games and rentals</li>
-        <li>Group classes: HIIT, boxing, pilates, acroyoga</li>
+        <li>Group classes: hybrid training, martial arts, pilates, spinning</li>
         <li>Personal training for kids and adults</li>
-        <li>Bocce ball and a smoothie bar to refuel</li>
+        <li>A sports bar to refuel and watch the match</li>
       </ul>
       <a href="/gym/" class="btn btn-y" style="margin-top:1.6rem">Explore the gym &rarr;</a>
     </div>
@@ -296,23 +331,23 @@ def home_en():
 </section>'''
 
 def field_en():
-    cards=[("Football","Five-a-side, a full match or a kickabout. The pitch is yours by the hour."),
-           ("Badminton","Nets up, rackets ready. Book a court for singles or doubles."),
-           ("Birthday parties","The field, the space and the energy. We host, you celebrate.")]
+    cards=[("Football 5","Five-a-side (5v5) for men, women and kids. ₡10,000 per team or ₡20,000 per hour. Reserve on WhatsApp, plan online and find a match."),
+           ("Open-court sports","Volleyball, handball, ultimate frisbee, athletics, foot-tennis or free court time. ₡2,000 per person."),
+           ("Birthdays &amp; events","Birthday parties and private events - the field, the space and the energy. Price depends on the event.")]
     ch="".join(f'<div class="card"><div><h3>{h}</h3><p>{p}</p></div></div>' for h,p in cards)
     return f'''<section class="subhero">
   <span class="eight">8</span>
   <div class="wrap subhero-inner">
     <span class="eyebrow">Reserve online</span>
     <h1>Field &amp; <span>courts</span></h1>
-    <p class="lead">Book the football field, a badminton court or a birthday party - pick your time and pay cash on the day.</p>
+    <p class="lead">Book the football field, open-court sports or a birthday - pick your time and pay cash on the day.</p>
   </div>
 </section>
 <section>
   <div class="wrap">
     <div class="sec-head"><span class="kicker">What you can book</span><h2>One pitch, every game</h2></div>
     <div class="cards" style="grid-template-columns:repeat(3,1fr)">{ch}</div>
-    <div class="ph" style="margin-top:1.6rem">Field rental rates and party packages live on <a class="yellow" href="/hours/">Hours &amp; fees</a> - send us the prices and we'll add them.</div>
+    <p style="color:var(--muted);margin-top:1.6rem">Football 5: ₡10,000/team or ₡20,000/hour · Open-court sports: ₡2,000/person · Birthdays &amp; events: price on request. Full list on <a class="yellow" href="/hours/">Hours &amp; fees</a>.</p>
   </div>
 </section>
 {book_block("en")}'''
@@ -346,8 +381,9 @@ def gym_en():
 <section style="background:#0E0E0E">
   <div class="wrap">
     <div class="sec-head"><span class="kicker">One on one</span><h2>Personal training</h2><p>Custom programmes for kids and adults, built around your goals.</p></div>
-    <div class="ph">Send us the trainer details, session options and prices and we'll build this section out.</div>
-    <a href="{WA}" class="btn btn-y" style="margin-top:1.4rem">Ask about training &rarr;</a>
+    <p style="color:var(--muted);max-width:640px">One-on-one coaching with Jeffry Z., a certified personal trainer and Human Movement Sciences student. Customized workout plans, one-on-one sessions and online coaching - for weight loss, muscle gain or just better health. Your first consultation is free.</p>
+    <a href="https://wa.me/50683423808" class="btn btn-y" style="margin-top:1.4rem">WhatsApp Jeffry +506 8342 3808 &rarr;</a>
+    <a href="/classes/personal-training/" style="display:inline-block;margin:1.4rem 0 0 1rem;color:var(--yellow);font-weight:700">Personal training details &rarr;</a>
   </div>
 </section>'''
 
@@ -358,21 +394,33 @@ def classes_en():
   <div class="wrap subhero-inner">
     <span class="eyebrow">Move with us</span>
     <h1>Classes for every <span>level</span></h1>
-    <p class="lead">HIIT, boxing, pilates and acroyoga with Samara's best instructors. Tap a class for the details - message us to reserve.</p>
+    <p class="lead">Hybrid training, martial arts, pilates, spinning and personal training with Samara's own coaches. Tap a class for the details - message us to reserve.</p>
   </div>
 </section>
 <section>
   <div class="wrap">
     <div class="classgrid">{chips}</div>
     <div class="sec-head" style="margin-top:3rem"><span class="kicker">Timetable</span><h2>Weekly schedule</h2></div>
-    <div class="ph">Send us the weekly class timetable and we'll lay it out here - day, time and instructor for each class.</div>
+    <p style="color:var(--muted)">Each class keeps its own times - open a class above for the full schedule. Quick guide:</p>
+    <ul class="feat-list" style="margin-top:1rem">
+      <li>Hybrid Training - Mon-Fri 7am &amp; 8pm, Sat 7am &amp; 3pm (extra 6am Mon/Wed/Fri)</li>
+      <li>Martial Arts - adults &amp; kids, mornings &amp; evenings (BJJ &amp; MMA)</li>
+      <li>Pilates Reformer - Mon-Fri 8am-5pm</li>
+      <li>Spinning - selected afternoons 4:30 &amp; 5:30pm</li>
+      <li>Personal Training - by appointment</li>
+    </ul>
     <p style="color:var(--muted);margin-top:1rem">Classes are reserved by message. <a class="yellow" href="{WA}" style="font-weight:700">WhatsApp {PHONE} &rarr;</a></p>
   </div>
 </section>'''
 
 def hours_en():
-    rows=[("Field rental","per hour"),("Gym drop-in","per visit"),("Class drop-in","per class"),("Personal training","per session"),("Birthday party","per package")]
-    tr="".join(f'<tr><td>{a}</td><td style="color:var(--muted)">{b}</td><td class="amt">To confirm</td></tr>' for a,b in rows)
+    rows=[("Football 5","per team / per hour","₡10,000 / ₡20,000"),
+          ("Open-court sports","volleyball, handball, ultimate, athletics, foot-tennis","₡2,000 / person"),
+          ("Hybrid Training","month / week / day","₡25,000 / ₡10,000 / ₡3,000"),
+          ("Other classes","pilates, spinning, martial arts, personal training","Ask the trainer"),
+          ("Birthdays &amp; events","private events","Price on request"),
+          ("Sports bar","beer / Powerade / water / fresco","₡1,500 / ₡1,500 / ₡1,000 / ₡1,000")]
+    tr="".join(f'<tr><td>{a}</td><td style="color:var(--muted)">{b}</td><td class="amt">{c}</td></tr>' for a,b,c in rows)
     return f'''<section class="subhero">
   <span class="eight">8</span>
   <div class="wrap subhero-inner">
@@ -384,8 +432,8 @@ def hours_en():
 <section>
   <div class="wrap">
     <div class="sec-head"><span class="kicker">Fees</span><h2>What it costs</h2></div>
-    <table class="ptable"><caption>Prices - to confirm</caption><tbody>{tr}</tbody></table>
-    <div class="ph" style="margin-top:1.2rem">Send us your prices and we'll swap "To confirm" for the real numbers.</div>
+    <table class="ptable"><caption>Prices in colones (₡)</caption><tbody>{tr}</tbody></table>
+    <p style="color:var(--muted);margin-top:1.2rem">Class prices for pilates, spinning, martial arts and personal training are set by each trainer - just ask on WhatsApp. Gym drop-in rates coming soon.</p>
   </div>
 </section>
 <section style="background:#0E0E0E">
@@ -399,12 +447,12 @@ print("EN bodies loaded")
 # ====================== ES BODIES ======================
 def home_es():
     cards = [
-      ("feature","Reservá en línea","Cancha","Fútbol, bádminton y fiestas de cumpleaños. Reservá tu espacio en segundos.","Reservá la cancha &rarr;","/es/cancha/#book"),
+      ("feature","Reservá en línea","Cancha","Fútbol 5, deportes de cancha y cumpleaños. Reservá tu espacio en segundos.","Reservá la cancha &rarr;","/es/cancha/#book"),
       ("","Abierto a diario","Gimnasio","Pesas libres, máquinas y cardio. Entrá por el día o entrená con coach.","Más &rarr;","/es/gimnasio/"),
-      ("","Todos los niveles","Clases grupales","HIIT, boxeo, pilates y acroyoga con los mejores instructores de Sámara.","Ver el horario &rarr;","/es/clases/"),
+      ("","Todos los niveles","Clases grupales","Entrenamiento híbrido, artes marciales, pilates y spinning con los coaches de Sámara.","Ver las clases &rarr;","/es/clases/"),
       ("","Uno a uno","Entrenamiento personal","Programas a medida para niños y adultos, según tus objetivos.","Más &rarr;","/es/gimnasio/"),
       ("","Fiestas","Cumpleaños","La cancha, el espacio y la energía. Nosotros recibimos, vos celebrás.","Consultá &rarr;","/es/cancha/#book"),
-      ("","Recargá","Bar de batidos","Bebidas frías y batidos frescos esperando en recepción.","Más &rarr;","#smoothie"),
+      ("","Mirá el partido","Bar deportivo","Fútbol en vivo, bebidas frías y algo para picar. Comida rápida muy pronto.","Más &rarr;","#smoothie"),
     ]
     cardhtml=""
     for cls,tag,h,p,go,href in cards:
@@ -436,9 +484,9 @@ def home_es():
       <ul class="feat-list">
         <li>Gimnasio completo - pesas libres, máquinas y cardio</li>
         <li>Cancha de fútbol para partidos, mejengas y alquiler</li>
-        <li>Clases grupales: HIIT, boxeo, pilates, acroyoga</li>
+        <li>Clases grupales: entrenamiento híbrido, artes marciales, pilates, spinning</li>
         <li>Entrenamiento personal para niños y adultos</li>
-        <li>Bocce y un bar de batidos para recargar</li>
+        <li>Un bar deportivo para recargar y ver el partido</li>
       </ul>
       <a href="/es/gimnasio/" class="btn btn-y" style="margin-top:1.6rem">Conocé el gimnasio &rarr;</a>
     </div>
@@ -461,23 +509,23 @@ def home_es():
 </section>'''
 
 def field_es():
-    cards=[("Fútbol","Cinco contra cinco, un partido completo o una mejenga. La cancha es tuya por hora."),
-           ("Bádminton","Redes puestas, raquetas listas. Reservá una cancha para singles o dobles."),
-           ("Cumpleaños","La cancha, el espacio y la energía. Nosotros recibimos, vos celebrás.")]
+    cards=[("Fútbol 5","Cinco contra cinco (5v5) para hombres, mujeres y niños. ₡10.000 por equipo o ₡20.000 por hora. Reservá por WhatsApp, planeá en línea y buscá reto."),
+           ("Deportes de cancha","Voleibol, handball, ultimate frisbee, atletismo, fútbol-tenis o cancha libre. ₡2.000 por persona."),
+           ("Cumpleaños y eventos","Cumpleaños y eventos privados - la cancha, el espacio y la energía. El precio depende del evento.")]
     ch="".join(f'<div class="card"><div><h3>{h}</h3><p>{p}</p></div></div>' for h,p in cards)
     return f'''<section class="subhero">
   <span class="eight">8</span>
   <div class="wrap subhero-inner">
     <span class="eyebrow">Reservá en línea</span>
     <h1><span>Cancha</span> y canchas</h1>
-    <p class="lead">Reservá la cancha de fútbol, una cancha de bádminton o una fiesta de cumpleaños - elegí tu hora y pagás en efectivo el mismo día.</p>
+    <p class="lead">Reservá la cancha de fútbol, deportes de cancha o un cumpleaños - elegí tu hora y pagás en efectivo el mismo día.</p>
   </div>
 </section>
 <section>
   <div class="wrap">
     <div class="sec-head"><span class="kicker">Qué podés reservar</span><h2>Una cancha, todos los juegos</h2></div>
     <div class="cards" style="grid-template-columns:repeat(3,1fr)">{ch}</div>
-    <div class="ph" style="margin-top:1.6rem">Las tarifas de alquiler y los paquetes de cumpleaños viven en <a class="yellow" href="/es/horarios/">Horarios y precios</a> - mandanos los precios y los agregamos.</div>
+    <p style="color:var(--muted);margin-top:1.6rem">Fútbol 5: ₡10.000/equipo o ₡20.000/hora · Deportes de cancha: ₡2.000/persona · Cumpleaños y eventos: precio a consultar. Lista completa en <a class="yellow" href="/es/horarios/">Horarios y precios</a>.</p>
   </div>
 </section>
 {book_block("es")}'''
@@ -511,8 +559,9 @@ def gym_es():
 <section style="background:#0E0E0E">
   <div class="wrap">
     <div class="sec-head"><span class="kicker">Uno a uno</span><h2>Entrenamiento personal</h2><p>Programas a medida para niños y adultos, según tus objetivos.</p></div>
-    <div class="ph">Mandanos los datos del entrenador, las opciones de sesión y los precios y armamos esta sección.</div>
-    <a href="{WA}" class="btn btn-y" style="margin-top:1.4rem">Consultá por entrenamiento &rarr;</a>
+    <p style="color:var(--muted);max-width:640px">Entrenamiento uno a uno con Jeffry Z., entrenador personal certificado y estudiante de Ciencias del Movimiento Humano. Rutinas personalizadas, sesiones uno a uno y coaching en línea - para bajar de peso, ganar músculo o simplemente estar más sano. La primera consulta es gratis.</p>
+    <a href="https://wa.me/50683423808" class="btn btn-y" style="margin-top:1.4rem">WhatsApp Jeffry +506 8342 3808 &rarr;</a>
+    <a href="/es/clases/entrenamiento-personal/" style="display:inline-block;margin:1.4rem 0 0 1rem;color:var(--yellow);font-weight:700">Ver entrenamiento personal &rarr;</a>
   </div>
 </section>'''
 
@@ -523,21 +572,33 @@ def classes_es():
   <div class="wrap subhero-inner">
     <span class="eyebrow">Movete con nosotros</span>
     <h1>Clases para todos los <span>niveles</span></h1>
-    <p class="lead">HIIT, boxeo, pilates y acroyoga con los mejores instructores de Sámara. Tocá una clase para ver los detalles - escribinos para reservar.</p>
+    <p class="lead">Entrenamiento híbrido, artes marciales, pilates, spinning y entrenamiento personal con los coaches de Sámara. Tocá una clase para ver los detalles - escribinos para reservar.</p>
   </div>
 </section>
 <section>
   <div class="wrap">
     <div class="classgrid">{chips}</div>
     <div class="sec-head" style="margin-top:3rem"><span class="kicker">Horario</span><h2>Programa semanal</h2></div>
-    <div class="ph">Mandanos el horario semanal de clases y lo dejamos acá - día, hora e instructor de cada clase.</div>
+    <p style="color:var(--muted)">Cada clase tiene su propio horario - abrí una clase arriba para verlo completo. Guía rápida:</p>
+    <ul class="feat-list" style="margin-top:1rem">
+      <li>Entrenamiento Híbrido - Lun-Vie 7am y 8pm, Sáb 7am y 3pm (extra 6am Lun/Mié/Vie)</li>
+      <li>Artes Marciales - adultos y niños, mañanas y tardes (BJJ y MMA)</li>
+      <li>Pilates Reformer - Lun-Vie 8am-5pm</li>
+      <li>Spinning - tardes seleccionadas 4:30 y 5:30pm</li>
+      <li>Entrenamiento Personal - con cita previa</li>
+    </ul>
     <p style="color:var(--muted);margin-top:1rem">Las clases se reservan por mensaje. <a class="yellow" href="{WA}" style="font-weight:700">WhatsApp {PHONE} &rarr;</a></p>
   </div>
 </section>'''
 
 def hours_es():
-    rows=[("Alquiler de cancha","por hora"),("Gimnasio por día","por visita"),("Clase suelta","por clase"),("Entrenamiento personal","por sesión"),("Fiesta de cumpleaños","por paquete")]
-    tr="".join(f'<tr><td>{a}</td><td style="color:var(--muted)">{b}</td><td class="amt">Por confirmar</td></tr>' for a,b in rows)
+    rows=[("Fútbol 5","por equipo / por hora","₡10.000 / ₡20.000"),
+          ("Deportes de cancha","voleibol, handball, ultimate, atletismo, fútbol-tenis","₡2.000 / persona"),
+          ("Entrenamiento Híbrido","mes / semana / día","₡25.000 / ₡10.000 / ₡3.000"),
+          ("Otras clases","pilates, spinning, artes marciales, entreno personal","Consultá al entrenador"),
+          ("Cumpleaños y eventos","eventos privados","Precio a consultar"),
+          ("Bar deportivo","cerveza / Powerade / agua / fresco","₡1.500 / ₡1.500 / ₡1.000 / ₡1.000")]
+    tr="".join(f'<tr><td>{a}</td><td style="color:var(--muted)">{b}</td><td class="amt">{c}</td></tr>' for a,b,c in rows)
     return f'''<section class="subhero">
   <span class="eight">8</span>
   <div class="wrap subhero-inner">
@@ -549,8 +610,8 @@ def hours_es():
 <section>
   <div class="wrap">
     <div class="sec-head"><span class="kicker">Precios</span><h2>Cuánto cuesta</h2></div>
-    <table class="ptable"><caption>Precios - por confirmar</caption><tbody>{tr}</tbody></table>
-    <div class="ph" style="margin-top:1.2rem">Mandanos tus precios y cambiamos "Por confirmar" por los números reales.</div>
+    <table class="ptable"><caption>Precios en colones (₡)</caption><tbody>{tr}</tbody></table>
+    <p style="color:var(--muted);margin-top:1.2rem">Los precios de pilates, spinning, artes marciales y entrenamiento personal los pone cada entrenador - consultá por WhatsApp. Tarifas del gimnasio por día muy pronto.</p>
   </div>
 </section>
 <section style="background:#0E0E0E">
@@ -585,17 +646,17 @@ pages = [
   ("/es/", "/", "es", "", "Stadium 8 Sport Center | Sámara, Costa Rica",
    "La casa del deporte en Sámara. Alquilá la cancha de fútbol, entrená en el gimnasio, metete a una clase o reservá un cumpleaños. Stadium 8 Sport Center, Sámara, Guanacaste.", home_es(), SCHEMA),
   ("/field/", "/es/cancha/", "en", "field", "Book the field | Stadium 8 Samara",
-   "Book Stadium 8's football field, badminton courts or a birthday party in Samara. Pick your time, pay cash on the day.", field_en(), ""),
+   "Book Stadium 8's football field, open-court sports or a birthday party in Samara. Pick your time, pay cash on the day.", field_en(), ""),
   ("/es/cancha/", "/field/", "es", "field", "Reservá la cancha | Stadium 8 Sámara",
-   "Reservá la cancha de fútbol, las canchas de bádminton o un cumpleaños en Stadium 8, Sámara. Elegí tu hora, pagás en efectivo.", field_es(), ""),
+   "Reservá la cancha de fútbol, deportes de cancha o un cumpleaños en Stadium 8, Sámara. Elegí tu hora, pagás en efectivo.", field_es(), ""),
   ("/gym/", "/es/gimnasio/", "en", "gym", "Gym &amp; training | Stadium 8 Samara",
    "Full gym and personal training at Stadium 8 Samara - free weights, machines, cardio, and coaching for kids and adults.", gym_en(), ""),
   ("/es/gimnasio/", "/gym/", "es", "gym", "Gimnasio y entreno | Stadium 8 Sámara",
    "Gimnasio completo y entrenamiento personal en Stadium 8 Sámara - pesas, máquinas, cardio y coaching para niños y adultos.", gym_es(), ""),
   ("/classes/", "/es/clases/", "en", "classes", "Classes | Stadium 8 Samara",
-   "HIIT, boxing, pilates and acroyoga classes at Stadium 8 Samara. Every class has its own page - message us to reserve.", classes_en(), ""),
+   "Hybrid training, martial arts, pilates, spinning and personal training at Stadium 8 Samara. Every class has its own page - message us to reserve.", classes_en(), ""),
   ("/es/clases/", "/classes/", "es", "classes", "Clases | Stadium 8 Sámara",
-   "Clases de HIIT, boxeo, pilates y acroyoga en Stadium 8 Sámara. Cada clase tiene su página - escribinos para reservar.", classes_es(), ""),
+   "Entrenamiento híbrido, artes marciales, pilates, spinning y entrenamiento personal en Stadium 8 Sámara. Cada clase tiene su página - escribinos para reservar.", classes_es(), ""),
   ("/hours/", "/es/horarios/", "en", "hours", "Hours &amp; fees | Stadium 8 Samara",
    "Opening hours, prices and how to find Stadium 8 Sport Center in Samara, Guanacaste, Costa Rica.", hours_en(), ""),
   ("/es/horarios/", "/hours/", "es", "hours", "Horarios y precios | Stadium 8 Sámara",
