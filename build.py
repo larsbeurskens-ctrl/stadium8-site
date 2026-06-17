@@ -153,7 +153,7 @@ def contact_block(lang):
         return f'''<div class="contact">
   <div class="info">
     <p class="lbl">Opening hours</p>
-    <p>Mon-Fri from 7am, including evening training · Sat 7am-3pm · Sun closed</p>
+    <p>Mon-Fri 7am-8pm · Sat 7am-3pm · Sun closed</p>
     <p class="lbl" style="margin-top:1.4rem">Find us</p>
     <p>{ADDR}</p>
     <p class="lbl">Contact</p>
@@ -166,7 +166,7 @@ def contact_block(lang):
     return f'''<div class="contact">
   <div class="info">
     <p class="lbl">Horario</p>
-    <p>Lun-Vie desde 7am, incluye entreno de la tarde · Sáb 7am-3pm · Dom cerrado</p>
+    <p>Lun-Vie 7am-8pm · Sáb 7am-3pm · Dom cerrado</p>
     <p class="lbl" style="margin-top:1.4rem">Dónde estamos</p>
     <p>{ADDR}</p>
     <p class="lbl">Contacto</p>
@@ -179,7 +179,7 @@ def contact_block(lang):
 
 # ====================== CLASSES ======================
 CLASSES = [
-  {"key":"hybrid","slug_en":"hybrid-training","slug_es":"entrenamiento-hibrido","en":"Hybrid Training","es":"Entrenamiento Híbrido",
+  {"key":"hybrid","img":"hybrid.jpg","slug_en":"hybrid-training","slug_es":"entrenamiento-hibrido","en":"Hybrid Training","es":"Entrenamiento Híbrido",
    "tag_en":"Strength + cardio. Build muscle and endurance in one session.","tag_es":"Fuerza + cardio. Músculo y resistencia en una sola sesión.",
    "desc_en":"Strength and cardio in one program, so you never have to choose between being strong and having endurance. Every session is different (zero boredom): you build real muscle and strength, improve your stamina, burn fat faster and perform better both in the gym and outside it. Run by Samara Workout with coach Noe.",
    "desc_es":"Fuerza y cardio en un solo programa, para que no tengás que elegir entre ser fuerte o tener resistencia. Cada sesión es diferente (cero aburrimiento): ganás músculo y fuerza real, mejorás tu resistencia, quemás grasa más rápido y rendís mejor dentro y fuera del gym. A cargo de Samara Workout con el entrenador Noe.",
@@ -188,7 +188,7 @@ CLASSES = [
    "price_en":"₡25,000 / month · ₡10,000 / week · ₡3,000 / day","price_es":"₡25.000 / mes · ₡10.000 / semana · ₡3.000 / día",
    "wa":WA,"wal_en":f"WhatsApp to reserve {PHONE}","wal_es":f"WhatsApp para reservar {PHONE}"},
 
-  {"key":"martial","slug_en":"martial-arts","slug_es":"artes-marciales","en":"Martial Arts","es":"Artes Marciales",
+  {"key":"martial","img":"martial-arts.jpg","slug_en":"martial-arts","slug_es":"artes-marciales","en":"Martial Arts","es":"Artes Marciales",
    "tag_en":"Brazilian Jiu-Jitsu &amp; MMA for adults, teens and kids.","tag_es":"Jiu-Jitsu Brasileño y MMA para adultos, jóvenes y niños.",
    "desc_en":"Grappling and striking with Pura Vida Martial Arts: Brazilian Jiu-Jitsu (Gi and No-Gi) and MMA. Adults, teenagers and kids, all levels welcome. Train hard, stay humble, live Pura Vida - all levels, all goals, one family.",
    "desc_es":"Grappling y striking con Pura Vida Martial Arts: Jiu-Jitsu Brasileño (con Gi y sin Gi) y MMA. Adultos, jóvenes y niños, todos los niveles bienvenidos. Entrená duro, mantené la humildad, viví la pura vida - todos los niveles, todas las metas, una sola familia.",
@@ -197,7 +197,7 @@ CLASSES = [
    "price_en":"Ask Oli for class prices","price_es":"Consultá los precios con Oli",
    "wa":"https://wa.me/50686162810","wal_en":"WhatsApp Oli +506 8616 2810","wal_es":"WhatsApp Oli +506 8616 2810"},
 
-  {"key":"pilates","slug_en":"pilates-reformer","slug_es":"pilates-reformer","en":"Pilates Reformer","es":"Pilates Reformer",
+  {"key":"pilates","img":"pilates.jpg","slug_en":"pilates-reformer","slug_es":"pilates-reformer","en":"Pilates Reformer","es":"Pilates Reformer",
    "tag_en":"Low-impact, fast results. Posture, core and flexibility.","tag_es":"Bajo impacto, resultados rápidos. Postura, core y flexibilidad.",
    "desc_en":"Personalized Reformer Pilates on 2 beds plus a Wunda chair, in small groups of up to 3 and adapted to every level. Low impact with fast results: improve your posture and ease chronic pain by strengthening the core, gain flexibility, sharpen concentration and coordination, and use the breath as part of every movement.",
    "desc_es":"Pilates Reformer personalizado en 2 camas más una silla Wunda, en grupos pequeños de máximo 3 y adaptado a todos los niveles. Bajo impacto con resultados rápidos: mejorá tu postura y eliminá dolores crónicos fortaleciendo el core, ganá flexibilidad, trabajá la concentración y la coordinación, y usá la respiración como parte del movimiento.",
@@ -206,7 +206,7 @@ CLASSES = [
    "price_en":"Ask for class prices","price_es":"Consultá los precios",
    "wa":WA,"wal_en":f"WhatsApp to reserve {PHONE}","wal_es":f"WhatsApp para reservar {PHONE}"},
 
-  {"key":"spinning","slug_en":"spinning","slug_es":"spinning","en":"Spinning","es":"Spinning",
+  {"key":"spinning","img":"spinning.jpg","slug_en":"spinning","slug_es":"spinning","en":"Spinning","es":"Spinning",
    "tag_en":"Intense cardio on the bike. Low impact, big burn.","tag_es":"Cardio intenso en la bici. Bajo impacto, gran quema.",
    "desc_en":"Personalized spinning on 5 bikes, in small groups of up to 5 and open to every level. Burn calories and build endurance with intense cardiovascular training: tone legs and glutes, release endorphins and use your breath to guide the movement, all in a low-impact session.",
    "desc_es":"Spinning personalizado en 5 bicicletas, en grupos pequeños de máximo 5 y para todos los niveles. Quemá calorías y mejorá tu resistencia con entrenamiento cardiovascular intenso: tonificá piernas y glúteos, liberá endorfinas y usá la respiración para guiar el movimiento, todo en una sesión de bajo impacto.",
@@ -215,7 +215,7 @@ CLASSES = [
    "price_en":"Ask for class prices","price_es":"Consultá los precios",
    "wa":WA,"wal_en":f"WhatsApp to reserve {PHONE}","wal_es":f"WhatsApp para reservar {PHONE}"},
 
-  {"key":"pt","slug_en":"personal-training","slug_es":"entrenamiento-personal","en":"Personal Training","es":"Entrenamiento Personal",
+  {"key":"pt","img":"personal-training.jpg","slug_en":"personal-training","slug_es":"entrenamiento-personal","en":"Personal Training","es":"Entrenamiento Personal",
    "tag_en":"One-on-one coaching built around your goals.","tag_es":"Entrenamiento uno a uno según tus metas.",
    "desc_en":"One-on-one coaching with Jeffry Z., a certified personal trainer and Human Movement Sciences (Physical Education) student. Whether it's weight loss, muscle gain or simply better health, you get a plan tailored to you: customized workout plans, one-on-one sessions and online coaching. Book a free consultation to start.",
    "desc_es":"Entrenamiento uno a uno con Jeffry Z., entrenador personal certificado y estudiante de Ciencias del Movimiento Humano (Educación Física). Ya sea bajar de peso, ganar músculo o simplemente estar más sano, recibís un plan hecho para vos: rutinas personalizadas, sesiones uno a uno y coaching en línea. Reservá una consulta gratis para empezar.",
@@ -237,6 +237,8 @@ def class_detail(c, lang):
            "note":"Las clases se reservan por mensaje - sin reserva en línea. Los horarios pueden cambiar; el entrenador lo puede actualizar cuando quiera."}
     desc=c["desc_"+lang]; sched=c["sched_"+lang]; inst=c["inst"]; level=c["level_"+lang]; price=c["price_"+lang]
     wa=c["wa"]; wal=c["wal_"+lang]
+    _img=c.get("img","")
+    img_html = (f'<img src="/assets/img/{_img}" alt="{name}" loading="lazy" style="width:100%;max-height:460px;object-fit:contain;background:#0E0E0E;border-radius:14px;display:block;margin-bottom:1.4rem;border:1px solid rgba(255,255,255,.08)" />' if (_img and (ROOT/"assets/img"/_img).exists()) else "")
     return f'''<section class="subhero">
   <span class="eight">8</span>
   <div class="wrap subhero-inner">
@@ -248,6 +250,7 @@ def class_detail(c, lang):
 <section>
   <div class="wrap detail-grid">
     <div class="prose">
+      {img_html}
       <span class="kicker">{T["about"]}</span>
       <h2 style="color:#fff;font-size:clamp(1.7rem,3.5vw,2.4rem);margin:.4rem 0 1rem">{name}</h2>
       <p>{desc}</p>
@@ -265,6 +268,15 @@ def class_detail(c, lang):
   </div>
 </section>'''
 print("blocks loaded")
+
+def _img_exists(fn):
+    return bool(fn) and (ROOT / "assets/img" / fn).exists()
+
+def facility_img(lang):
+    if _img_exists("aerial.jpg"):
+        alt = "Stadium 8 aerial view" if lang=="en" else "Vista aérea de Stadium 8"
+        return f'<div class="imgslot" style="padding:0;overflow:hidden"><img src="/assets/img/aerial.jpg" alt="{alt}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>'
+    return '<div class="imgslot">[ Photo slot - assets/img/aerial.jpg ]</div>' if lang=="en" else '<div class="imgslot">[ Espacio para foto - assets/img/aerial.jpg ]</div>'
 
 # ====================== EN BODIES ======================
 def home_en():
@@ -312,7 +324,7 @@ def home_en():
       </ul>
       <a href="/gym/" class="btn btn-y" style="margin-top:1.6rem">Explore the gym &rarr;</a>
     </div>
-    <div class="imgslot">[ Photo slot - drop a gym / field shot here: assets/img/gym.jpg ]</div>
+    {facility_img("en")}
   </div>
 </section>
 <section>
@@ -332,7 +344,7 @@ def home_en():
 
 def field_en():
     cards=[("Football 5","Five-a-side (5v5) for men, women and kids. ₡10,000 per team or ₡20,000 per hour. Reserve on WhatsApp, plan online and find a match."),
-           ("Open-court sports","Volleyball, handball, ultimate frisbee, athletics, foot-tennis or free court time. ₡2,000 per person."),
+           ("Open-court sports","Volleyball, badminton, handball, ultimate frisbee, athletics, foot-tennis or free court time. ₡2,000 per person."),
            ("Birthdays &amp; events","Birthday parties and private events - the field, the space and the energy. Price depends on the event.")]
     ch="".join(f'<div class="card"><div><h3>{h}</h3><p>{p}</p></div></div>' for h,p in cards)
     return f'''<section class="subhero">
@@ -415,7 +427,7 @@ def classes_en():
 
 def hours_en():
     rows=[("Football 5","per team / per hour","₡10,000 / ₡20,000"),
-          ("Open-court sports","volleyball, handball, ultimate, athletics, foot-tennis","₡2,000 / person"),
+          ("Open-court sports","volleyball, badminton, handball, ultimate, athletics, foot-tennis","₡2,000 / person"),
           ("Hybrid Training","month / week / day","₡25,000 / ₡10,000 / ₡3,000"),
           ("Other classes","pilates, spinning, martial arts, personal training","Ask the trainer"),
           ("Birthdays &amp; events","private events","Price on request"),
@@ -490,7 +502,7 @@ def home_es():
       </ul>
       <a href="/es/gimnasio/" class="btn btn-y" style="margin-top:1.6rem">Conocé el gimnasio &rarr;</a>
     </div>
-    <div class="imgslot">[ Espacio para foto - poné una toma del gimnasio o la cancha: assets/img/gym.jpg ]</div>
+    {facility_img("es")}
   </div>
 </section>
 <section>
@@ -510,7 +522,7 @@ def home_es():
 
 def field_es():
     cards=[("Fútbol 5","Cinco contra cinco (5v5) para hombres, mujeres y niños. ₡10.000 por equipo o ₡20.000 por hora. Reservá por WhatsApp, planeá en línea y buscá reto."),
-           ("Deportes de cancha","Voleibol, handball, ultimate frisbee, atletismo, fútbol-tenis o cancha libre. ₡2.000 por persona."),
+           ("Deportes de cancha","Voleibol, bádminton, handball, ultimate frisbee, atletismo, fútbol-tenis o cancha libre. ₡2.000 por persona."),
            ("Cumpleaños y eventos","Cumpleaños y eventos privados - la cancha, el espacio y la energía. El precio depende del evento.")]
     ch="".join(f'<div class="card"><div><h3>{h}</h3><p>{p}</p></div></div>' for h,p in cards)
     return f'''<section class="subhero">
@@ -593,7 +605,7 @@ def classes_es():
 
 def hours_es():
     rows=[("Fútbol 5","por equipo / por hora","₡10.000 / ₡20.000"),
-          ("Deportes de cancha","voleibol, handball, ultimate, atletismo, fútbol-tenis","₡2.000 / persona"),
+          ("Deportes de cancha","voleibol, bádminton, handball, ultimate, atletismo, fútbol-tenis","₡2.000 / persona"),
           ("Entrenamiento Híbrido","mes / semana / día","₡25.000 / ₡10.000 / ₡3.000"),
           ("Otras clases","pilates, spinning, artes marciales, entreno personal","Consultá al entrenador"),
           ("Cumpleaños y eventos","eventos privados","Precio a consultar"),
