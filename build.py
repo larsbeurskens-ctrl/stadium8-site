@@ -4,7 +4,7 @@ import pathlib, html as _h
 
 ROOT = pathlib.Path("/Users/larsbeurskens/Documents/stadium8-site")
 SITE = "https://stadium8.com"
-CSSV = "4"
+CSSV = "5"
 
 # ---- brand / contact ----
 PHONE = "+506 8636 4357"
@@ -356,7 +356,8 @@ def field_en():
            ("Open-court sports","Volleyball, badminton, handball, ultimate frisbee, athletics, foot-tennis or free court time. ₡2,000 per person."),
            ("Birthdays &amp; events","Birthday parties and private events - the field, the space and the energy. Price depends on the event.")]
     ch="".join(f'<div class="card"><div><h3>{h}</h3><p>{p}</p></div></div>' for h,p in cards)
-    return f'''<section class="subhero">
+    return f'''<section class="subhero has-video">
+  <video class="subhero-video" autoplay muted loop playsinline preload="auto" poster="/assets/img/stadium8-hero-poster.jpg"><source src="/assets/video/stadium8-hero.mp4" type="video/mp4"></video>
   <span class="eight">8</span>
   <div class="wrap subhero-inner">
     <span class="eyebrow">Reserve online</span>
@@ -380,6 +381,22 @@ def gym_en():
     <span class="eyebrow">Open daily</span>
     <h1>Gym &amp; <span>training</span></h1>
     <p class="lead">A full gym, personal training for kids and adults, and the space to train however you like.</p>
+  </div>
+</section>
+<section style="background:#0E0E0E">
+  <div class="wrap split">
+    <div>
+      <span class="kicker">Train with Noe</span>
+      <h2 style="font-size:clamp(2rem,4.5vw,3.1rem);color:#fff;margin:.4rem 0 .8rem">Hybrid Training</h2>
+      <p style="color:var(--muted)">Strength and cardio in one program with Samara Workout. Build real muscle and endurance, burn fat and perform better - and every session is different. All levels welcome.</p>
+      <ul class="feat-list">
+        <li>Mon-Fri 7am &amp; 8pm, Sat 7am &amp; 3pm (extra 6am Mon/Wed/Fri)</li>
+        <li>₡25,000 / month · ₡10,000 / week · ₡3,000 / day</li>
+        <li>Coach Noe · all levels</li>
+      </ul>
+      <a href="/classes/hybrid-training/" class="btn btn-y" style="margin-top:1.6rem">Hybrid Training details &rarr;</a>
+    </div>
+    <div class="imgslot" style="padding:0;overflow:hidden"><img src="/assets/img/noe%20workout%201.png" alt="Hybrid Training with Noe - Samara Workout" loading="lazy" style="width:100%;height:100%;object-fit:contain;background:#0B0B0B;display:block" /></div>
   </div>
 </section>
 <section>
@@ -535,7 +552,8 @@ def field_es():
            ("Deportes de cancha","Voleibol, bádminton, handball, ultimate frisbee, atletismo, fútbol-tenis o cancha libre. ₡2.000 por persona."),
            ("Cumpleaños y eventos","Cumpleaños y eventos privados - la cancha, el espacio y la energía. El precio depende del evento.")]
     ch="".join(f'<div class="card"><div><h3>{h}</h3><p>{p}</p></div></div>' for h,p in cards)
-    return f'''<section class="subhero">
+    return f'''<section class="subhero has-video">
+  <video class="subhero-video" autoplay muted loop playsinline preload="auto" poster="/assets/img/stadium8-hero-poster.jpg"><source src="/assets/video/stadium8-hero.mp4" type="video/mp4"></video>
   <span class="eight">8</span>
   <div class="wrap subhero-inner">
     <span class="eyebrow">Reservá en línea</span>
@@ -559,6 +577,22 @@ def gym_es():
     <span class="eyebrow">Abierto a diario</span>
     <h1><span>Gimnasio</span> y entreno</h1>
     <p class="lead">Un gimnasio completo, entrenamiento personal para niños y adultos, y el espacio para entrenar como más te guste.</p>
+  </div>
+</section>
+<section style="background:#0E0E0E">
+  <div class="wrap split">
+    <div>
+      <span class="kicker">Entrená con Noe</span>
+      <h2 style="font-size:clamp(2rem,4.5vw,3.1rem);color:#fff;margin:.4rem 0 .8rem">Entrenamiento Híbrido</h2>
+      <p style="color:var(--muted)">Fuerza y cardio en un solo programa con Samara Workout. Ganá músculo y resistencia real, quemá grasa y rendí mejor - y cada sesión es diferente. Todos los niveles.</p>
+      <ul class="feat-list">
+        <li>Lun-Vie 7am y 8pm, Sáb 7am y 3pm (extra 6am Lun/Mié/Vie)</li>
+        <li>₡25.000 / mes · ₡10.000 / semana · ₡3.000 / día</li>
+        <li>Coach Noe · todos los niveles</li>
+      </ul>
+      <a href="/es/clases/entrenamiento-hibrido/" class="btn btn-y" style="margin-top:1.6rem">Ver Entrenamiento Híbrido &rarr;</a>
+    </div>
+    <div class="imgslot" style="padding:0;overflow:hidden"><img src="/assets/img/noe%20workout%201.png" alt="Entrenamiento Híbrido con Noe - Samara Workout" loading="lazy" style="width:100%;height:100%;object-fit:contain;background:#0B0B0B;display:block" /></div>
   </div>
 </section>
 <section>
