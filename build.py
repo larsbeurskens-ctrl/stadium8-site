@@ -4,7 +4,7 @@ import pathlib, html as _h
 
 ROOT = pathlib.Path("/Users/larsbeurskens/Documents/stadium8-site")
 SITE = "https://stadium8.com"
-CSSV = "3"
+CSSV = "4"
 
 # ---- brand / contact ----
 PHONE = "+506 8636 4357"
@@ -179,7 +179,7 @@ def contact_block(lang):
 
 # ====================== CLASSES ======================
 CLASSES = [
-  {"key":"hybrid","img":"hybrid.jpg","slug_en":"hybrid-training","slug_es":"entrenamiento-hibrido","en":"Hybrid Training","es":"Entrenamiento Híbrido",
+  {"key":"hybrid","img":"noe workout 1.png","slug_en":"hybrid-training","slug_es":"entrenamiento-hibrido","en":"Hybrid Training","es":"Entrenamiento Híbrido",
    "tag_en":"Strength + cardio. Build muscle and endurance in one session.","tag_es":"Fuerza + cardio. Músculo y resistencia en una sola sesión.",
    "desc_en":"Strength and cardio in one program, so you never have to choose between being strong and having endurance. Every session is different (zero boredom): you build real muscle and strength, improve your stamina, burn fat faster and perform better both in the gym and outside it. Run by Samara Workout with coach Noe.",
    "desc_es":"Fuerza y cardio en un solo programa, para que no tengás que elegir entre ser fuerte o tener resistencia. Cada sesión es diferente (cero aburrimiento): ganás músculo y fuerza real, mejorás tu resistencia, quemás grasa más rápido y rendís mejor dentro y fuera del gym. A cargo de Samara Workout con el entrenador Noe.",
@@ -188,7 +188,7 @@ CLASSES = [
    "price_en":"₡25,000 / month · ₡10,000 / week · ₡3,000 / day","price_es":"₡25.000 / mes · ₡10.000 / semana · ₡3.000 / día",
    "wa":WA,"wal_en":f"WhatsApp to reserve {PHONE}","wal_es":f"WhatsApp para reservar {PHONE}"},
 
-  {"key":"martial","img":"martial-arts.jpg","slug_en":"martial-arts","slug_es":"artes-marciales","en":"Martial Arts","es":"Artes Marciales",
+  {"key":"martial","img":"martialart 2.png","slug_en":"martial-arts","slug_es":"artes-marciales","en":"Martial Arts","es":"Artes Marciales",
    "tag_en":"Brazilian Jiu-Jitsu &amp; MMA for adults, teens and kids.","tag_es":"Jiu-Jitsu Brasileño y MMA para adultos, jóvenes y niños.",
    "desc_en":"Grappling and striking with Pura Vida Martial Arts: Brazilian Jiu-Jitsu (Gi and No-Gi) and MMA. Adults, teenagers and kids, all levels welcome. Train hard, stay humble, live Pura Vida - all levels, all goals, one family.",
    "desc_es":"Grappling y striking con Pura Vida Martial Arts: Jiu-Jitsu Brasileño (con Gi y sin Gi) y MMA. Adultos, jóvenes y niños, todos los niveles bienvenidos. Entrená duro, mantené la humildad, viví la pura vida - todos los niveles, todas las metas, una sola familia.",
@@ -215,7 +215,16 @@ CLASSES = [
    "price_en":"Ask for class prices","price_es":"Consultá los precios",
    "wa":WA,"wal_en":f"WhatsApp to reserve {PHONE}","wal_es":f"WhatsApp para reservar {PHONE}"},
 
-  {"key":"pt","img":"personal-training.jpg","slug_en":"personal-training","slug_es":"entrenamiento-personal","en":"Personal Training","es":"Entrenamiento Personal",
+  {"key":"aerial","img":"silk areal.jpeg","slug_en":"aerial-silk","slug_es":"acrobacia-aerea","en":"Aerial Silk","es":"Acrobacia Aérea",
+   "tag_en":"Strength, grace and confidence on the silks.","tag_es":"Fuerza, gracia y confianza en las telas.",
+   "desc_en":"Climb, wrap and pose on the aerial silks - a full-body workout that builds strength, flexibility and body awareness while you learn to move with control and grace. Open to adults and kids. Coached by Celeste.",
+   "desc_es":"Subí, envolvete y posá en las telas aéreas - un trabajo de cuerpo completo que desarrolla fuerza, flexibilidad y conciencia corporal mientras aprendés a moverte con control y gracia. Para adultos y niños. A cargo de la coach Celeste.",
+   "sched_en":"Tue &amp; Thu 3:30pm (kids classes too)","sched_es":"Mar y Jue 3:30pm (también para niños)",
+   "inst":"Celeste","level_en":"All levels · kids &amp; adults","level_es":"Todos los niveles · niños y adultos",
+   "price_en":"₡6,000 / class · ₡20,000 / month","price_es":"₡6.000 / clase · ₡20.000 / mes",
+   "wa":"https://wa.me/50687494771","wal_en":"WhatsApp Celeste +506 8749 4771","wal_es":"WhatsApp Celeste +506 8749 4771"},
+
+  {"key":"pt","img":"personal trainer 1.png","slug_en":"personal-training","slug_es":"entrenamiento-personal","en":"Personal Training","es":"Entrenamiento Personal",
    "tag_en":"One-on-one coaching built around your goals.","tag_es":"Entrenamiento uno a uno según tus metas.",
    "desc_en":"One-on-one coaching with Jeffry Z., a certified personal trainer and Human Movement Sciences (Physical Education) student. Whether it's weight loss, muscle gain or simply better health, you get a plan tailored to you: customized workout plans, one-on-one sessions and online coaching. Book a free consultation to start.",
    "desc_es":"Entrenamiento uno a uno con Jeffry Z., entrenador personal certificado y estudiante de Ciencias del Movimiento Humano (Educación Física). Ya sea bajar de peso, ganar músculo o simplemente estar más sano, recibís un plan hecho para vos: rutinas personalizadas, sesiones uno a uno y coaching en línea. Reservá una consulta gratis para empezar.",
@@ -238,7 +247,7 @@ def class_detail(c, lang):
     desc=c["desc_"+lang]; sched=c["sched_"+lang]; inst=c["inst"]; level=c["level_"+lang]; price=c["price_"+lang]
     wa=c["wa"]; wal=c["wal_"+lang]
     _img=c.get("img","")
-    img_html = (f'<img src="/assets/img/{_img}" alt="{name}" loading="lazy" style="width:100%;max-height:460px;object-fit:contain;background:#0E0E0E;border-radius:14px;display:block;margin-bottom:1.4rem;border:1px solid rgba(255,255,255,.08)" />' if (_img and (ROOT/"assets/img"/_img).exists()) else "")
+    img_html = (f'<img src="/assets/img/{_img.replace(" ","%20")}" alt="{name}" loading="lazy" style="width:100%;max-height:460px;object-fit:contain;background:#0E0E0E;border-radius:14px;display:block;margin-bottom:1.4rem;border:1px solid rgba(255,255,255,.08)" />' if (_img and (ROOT/"assets/img"/_img).exists()) else "")
     return f'''<section class="subhero">
   <span class="eight">8</span>
   <div class="wrap subhero-inner">
@@ -273,10 +282,10 @@ def _img_exists(fn):
     return bool(fn) and (ROOT / "assets/img" / fn).exists()
 
 def facility_img(lang):
-    if _img_exists("aerial.jpg"):
-        alt = "Stadium 8 aerial view" if lang=="en" else "Vista aérea de Stadium 8"
-        return f'<div class="imgslot" style="padding:0;overflow:hidden"><img src="/assets/img/aerial.jpg" alt="{alt}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>'
-    return '<div class="imgslot">[ Photo slot - assets/img/aerial.jpg ]</div>' if lang=="en" else '<div class="imgslot">[ Espacio para foto - assets/img/aerial.jpg ]</div>'
+    if _img_exists("stadium8-hero-poster.jpg"):
+        alt = "Stadium 8 Sport Center" if lang=="en" else "Stadium 8 Sport Center"
+        return f'<div class="imgslot" style="padding:0;overflow:hidden"><img src="/assets/img/stadium8-hero-poster.jpg" alt="{alt}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>'
+    return '<div class="imgslot">[ Photo slot - assets/img/stadium8-hero-poster.jpg ]</div>' if lang=="en" else '<div class="imgslot">[ Espacio para foto ]</div>'
 
 # ====================== EN BODIES ======================
 def home_en():
@@ -318,7 +327,7 @@ def home_en():
       <ul class="feat-list">
         <li>Full gym - free weights, machines and cardio</li>
         <li>Football field for matches, pick-up games and rentals</li>
-        <li>Group classes: hybrid training, martial arts, pilates, spinning</li>
+        <li>Group classes: hybrid training, martial arts, pilates, spinning, aerial silk</li>
         <li>Personal training for kids and adults</li>
         <li>A sports bar to refuel and watch the match</li>
       </ul>
@@ -406,7 +415,7 @@ def classes_en():
   <div class="wrap subhero-inner">
     <span class="eyebrow">Move with us</span>
     <h1>Classes for every <span>level</span></h1>
-    <p class="lead">Hybrid training, martial arts, pilates, spinning and personal training with Samara's own coaches. Tap a class for the details - message us to reserve.</p>
+    <p class="lead">Hybrid training, martial arts, pilates, spinning, aerial silk and personal training with Samara's own coaches. Tap a class for the details - message us to reserve.</p>
   </div>
 </section>
 <section>
@@ -419,6 +428,7 @@ def classes_en():
       <li>Martial Arts - adults &amp; kids, mornings &amp; evenings (BJJ &amp; MMA)</li>
       <li>Pilates Reformer - Mon-Fri 8am-5pm</li>
       <li>Spinning - selected afternoons 4:30 &amp; 5:30pm</li>
+      <li>Aerial Silk - Tue &amp; Thu 3:30pm (kids too)</li>
       <li>Personal Training - by appointment</li>
     </ul>
     <p style="color:var(--muted);margin-top:1rem">Classes are reserved by message. <a class="yellow" href="{WA}" style="font-weight:700">WhatsApp {PHONE} &rarr;</a></p>
@@ -496,7 +506,7 @@ def home_es():
       <ul class="feat-list">
         <li>Gimnasio completo - pesas libres, máquinas y cardio</li>
         <li>Cancha de fútbol para partidos, mejengas y alquiler</li>
-        <li>Clases grupales: entrenamiento híbrido, artes marciales, pilates, spinning</li>
+        <li>Clases grupales: entrenamiento híbrido, artes marciales, pilates, spinning, acrobacia aérea</li>
         <li>Entrenamiento personal para niños y adultos</li>
         <li>Un bar deportivo para recargar y ver el partido</li>
       </ul>
@@ -584,7 +594,7 @@ def classes_es():
   <div class="wrap subhero-inner">
     <span class="eyebrow">Movete con nosotros</span>
     <h1>Clases para todos los <span>niveles</span></h1>
-    <p class="lead">Entrenamiento híbrido, artes marciales, pilates, spinning y entrenamiento personal con los coaches de Sámara. Tocá una clase para ver los detalles - escribinos para reservar.</p>
+    <p class="lead">Entrenamiento híbrido, artes marciales, pilates, spinning, acrobacia aérea y entrenamiento personal con los coaches de Sámara. Tocá una clase para ver los detalles - escribinos para reservar.</p>
   </div>
 </section>
 <section>
@@ -597,6 +607,7 @@ def classes_es():
       <li>Artes Marciales - adultos y niños, mañanas y tardes (BJJ y MMA)</li>
       <li>Pilates Reformer - Lun-Vie 8am-5pm</li>
       <li>Spinning - tardes seleccionadas 4:30 y 5:30pm</li>
+      <li>Acrobacia Aérea - Mar y Jue 3:30pm (también niños)</li>
       <li>Entrenamiento Personal - con cita previa</li>
     </ul>
     <p style="color:var(--muted);margin-top:1rem">Las clases se reservan por mensaje. <a class="yellow" href="{WA}" style="font-weight:700">WhatsApp {PHONE} &rarr;</a></p>
