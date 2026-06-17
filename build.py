@@ -383,22 +383,6 @@ def gym_en():
     <p class="lead">A full gym, personal training for kids and adults, and the space to train however you like.</p>
   </div>
 </section>
-<section style="background:#0E0E0E">
-  <div class="wrap split">
-    <div>
-      <span class="kicker">Train with Noe</span>
-      <h2 style="font-size:clamp(2rem,4.5vw,3.1rem);color:#fff;margin:.4rem 0 .8rem">Hybrid Training</h2>
-      <p style="color:var(--muted)">Strength and cardio in one program with Samara Workout. Build real muscle and endurance, burn fat and perform better - and every session is different. All levels welcome.</p>
-      <ul class="feat-list">
-        <li>Mon-Fri 7am &amp; 8pm, Sat 7am &amp; 3pm (extra 6am Mon/Wed/Fri)</li>
-        <li>₡25,000 / month · ₡10,000 / week · ₡3,000 / day</li>
-        <li>Coach Noe · all levels</li>
-      </ul>
-      <a href="/classes/hybrid-training/" class="btn btn-y" style="margin-top:1.6rem">Hybrid Training details &rarr;</a>
-    </div>
-    <div class="imgslot" style="padding:0;overflow:hidden"><img src="/assets/img/noe%20workout%201.png" alt="Hybrid Training with Noe - Samara Workout" loading="lazy" style="width:100%;height:100%;object-fit:contain;background:#0B0B0B;display:block" /></div>
-  </div>
-</section>
 <section>
   <div class="wrap split">
     <div>
@@ -417,6 +401,22 @@ def gym_en():
   </div>
 </section>
 <section style="background:#0E0E0E">
+  <div class="wrap split">
+    <div>
+      <span class="kicker">Train with Noe</span>
+      <h2 style="font-size:clamp(2rem,4.5vw,3.1rem);color:#fff;margin:.4rem 0 .8rem">Hybrid Training</h2>
+      <p style="color:var(--muted)">Strength and cardio in one program with Samara Workout. Build real muscle and endurance, burn fat and perform better - and every session is different. All levels welcome.</p>
+      <ul class="feat-list">
+        <li>Mon-Fri 7am &amp; 8pm, Sat 7am &amp; 3pm (extra 6am Mon/Wed/Fri)</li>
+        <li>₡25,000 / month · ₡10,000 / week · ₡3,000 / day</li>
+        <li>Coach Noe · all levels</li>
+      </ul>
+      <a href="/classes/hybrid-training/" class="btn btn-y" style="margin-top:1.6rem">Hybrid Training details &rarr;</a>
+    </div>
+    <div class="imgslot" style="padding:0;overflow:hidden"><img src="/assets/img/noe%20workout%201.png" alt="Hybrid Training with Noe - Samara Workout" loading="lazy" style="width:100%;height:100%;object-fit:contain;background:#0B0B0B;display:block" /></div>
+  </div>
+</section>
+<section>
   <div class="wrap">
     <div class="sec-head"><span class="kicker">One on one</span><h2>Personal training</h2><p>Custom programmes for kids and adults, built around your goals.</p></div>
     <p style="color:var(--muted);max-width:640px">One-on-one coaching with Jeffry Z., a certified personal trainer and Human Movement Sciences student. Customized workout plans, one-on-one sessions and online coaching - for weight loss, muscle gain or just better health. Your first consultation is free.</p>
@@ -579,22 +579,6 @@ def gym_es():
     <p class="lead">Un gimnasio completo, entrenamiento personal para niños y adultos, y el espacio para entrenar como más te guste.</p>
   </div>
 </section>
-<section style="background:#0E0E0E">
-  <div class="wrap split">
-    <div>
-      <span class="kicker">Entrená con Noe</span>
-      <h2 style="font-size:clamp(2rem,4.5vw,3.1rem);color:#fff;margin:.4rem 0 .8rem">Entrenamiento Híbrido</h2>
-      <p style="color:var(--muted)">Fuerza y cardio en un solo programa con Samara Workout. Ganá músculo y resistencia real, quemá grasa y rendí mejor - y cada sesión es diferente. Todos los niveles.</p>
-      <ul class="feat-list">
-        <li>Lun-Vie 7am y 8pm, Sáb 7am y 3pm (extra 6am Lun/Mié/Vie)</li>
-        <li>₡25.000 / mes · ₡10.000 / semana · ₡3.000 / día</li>
-        <li>Coach Noe · todos los niveles</li>
-      </ul>
-      <a href="/es/clases/entrenamiento-hibrido/" class="btn btn-y" style="margin-top:1.6rem">Ver Entrenamiento Híbrido &rarr;</a>
-    </div>
-    <div class="imgslot" style="padding:0;overflow:hidden"><img src="/assets/img/noe%20workout%201.png" alt="Entrenamiento Híbrido con Noe - Samara Workout" loading="lazy" style="width:100%;height:100%;object-fit:contain;background:#0B0B0B;display:block" /></div>
-  </div>
-</section>
 <section>
   <div class="wrap split">
     <div>
@@ -613,6 +597,22 @@ def gym_es():
   </div>
 </section>
 <section style="background:#0E0E0E">
+  <div class="wrap split">
+    <div>
+      <span class="kicker">Entrená con Noe</span>
+      <h2 style="font-size:clamp(2rem,4.5vw,3.1rem);color:#fff;margin:.4rem 0 .8rem">Entrenamiento Híbrido</h2>
+      <p style="color:var(--muted)">Fuerza y cardio en un solo programa con Samara Workout. Ganá músculo y resistencia real, quemá grasa y rendí mejor - y cada sesión es diferente. Todos los niveles.</p>
+      <ul class="feat-list">
+        <li>Lun-Vie 7am y 8pm, Sáb 7am y 3pm (extra 6am Lun/Mié/Vie)</li>
+        <li>₡25.000 / mes · ₡10.000 / semana · ₡3.000 / día</li>
+        <li>Coach Noe · todos los niveles</li>
+      </ul>
+      <a href="/es/clases/entrenamiento-hibrido/" class="btn btn-y" style="margin-top:1.6rem">Ver Entrenamiento Híbrido &rarr;</a>
+    </div>
+    <div class="imgslot" style="padding:0;overflow:hidden"><img src="/assets/img/noe%20workout%201.png" alt="Entrenamiento Híbrido con Noe - Samara Workout" loading="lazy" style="width:100%;height:100%;object-fit:contain;background:#0B0B0B;display:block" /></div>
+  </div>
+</section>
+<section>
   <div class="wrap">
     <div class="sec-head"><span class="kicker">Uno a uno</span><h2>Entrenamiento personal</h2><p>Programas a medida para niños y adultos, según tus objetivos.</p></div>
     <p style="color:var(--muted);max-width:640px">Entrenamiento uno a uno con Jeffry Z., entrenador personal certificado y estudiante de Ciencias del Movimiento Humano. Rutinas personalizadas, sesiones uno a uno y coaching en línea - para bajar de peso, ganar músculo o simplemente estar más sano. La primera consulta es gratis.</p>
