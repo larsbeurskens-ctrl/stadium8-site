@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Stadium 8 · Edit website</title>
+<style>
+  :root { --yellow:#FFD400; --ink:#0E0E0E; --panel:#141414; --line:rgba(255,255,255,.12); --muted:#9a9a9a; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--ink); color:#fff; font-family:Inter,system-ui,-apple-system,sans-serif; }
+  .topbar { position:sticky; top:0; z-index:10; display:flex; align-items:center; gap:16px;
+    padding:12px 20px; background:#0b0b0b; border-bottom:1px solid var(--line); }
+  .topbar .logo { font-weight:800; font-size:1.1rem; } .topbar .logo b { color:var(--yellow); }
+  .topbar .spacer { flex:1; }
+  .topbar .status { color:var(--muted); font-size:.85rem; min-width:120px; text-align:right; }
+  button.btn { padding:9px 16px; border:none; border-radius:9px; font-weight:700; font-size:.9rem; cursor:pointer; }
+  .btn-y { background:var(--yellow); color:#000; } .btn-y:disabled { opacity:.55; cursor:default; }
+  .btn-ghost { background:transparent; color:var(--muted); border:1px solid var(--line); }
+  .layout { display:flex; min-height:calc(100vh - 57px); }
+  .side { width:220px; flex-shrink:0; border-right:1px solid var(--line); padding:14px 10px; }
+  .side a { display:block; padding:10px 12px; border-radius:8px; color:#ccc; text-decoration:none; font-size:.92rem; cursor:pointer; }
+  .side a.active { background:var(--panel); color:#fff; font-weight:600; }
+  .main { flex:1; padding:26px 30px; max-width:780px; }
+  .section-card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px 22px; margin-bottom:20px; }
+  .section-title { font-size:1.05rem; margin:0 0 16px; }
+  .field { margin-bottom:15px; }
+  .field > label { display:block; font-size:.78rem; font-weight:600; color:#cdcdcd; margin-bottom:6px; }
+  .field input[type=text], .field textarea { width:100%; padding:10px 11px; border-radius:8px; border:1px solid var(--line);
+    background:#0E0E0E; color:#fff; font-size:.93rem; font-family:inherit; }
+  .field textarea { min-height:74px; resize:vertical; line-height:1.5; }
+  .field input:focus, .field textarea:focus { outline:none; border-color:var(--yellow); }
+  .field.bool { display:flex; align-items:center; gap:9px; }
+  .field.bool label { margin:0; }
+  .listwrap { border-left:2px solid var(--line); padding-left:14px; margin:6px 0 4px; }
+  .item-card { background:#0E0E0E; border:1px solid var(--line); border-radius:10px; padding:14px 14px 4px; margin-bottom:12px; position:relative; }
+  .item-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+  .item-head .nm { font-size:.8rem; font-weight:700; color:var(--yellow); }
+  .row-text { display:flex; gap:8px; margin-bottom:8px; }
+  .row-text input { flex:1; }
+  .mini { padding:5px 10px; font-size:.78rem; border-radius:7px; border:1px solid var(--line); background:transparent; color:#ccc; cursor:pointer; }
+  .mini.del { color:#ff7a7a; border-color:rgba(255,80,80,.3); }
+  .add { margin-top:4px; }
+  .hint { color:var(--muted); font-size:.76rem; margin:-2px 0 14px; }
+  .loading { padding:60px; text-align:center; color:var(--muted); }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <span class="logo">Stadium <b>8</b> · Editor</span>
+    <span class="spacer"></span>
+    <span class="status" id="status"></span>
+    <button class="btn btn-y" id="save">Save changes</button>
+    <button class="btn btn-ghost" id="logout">Log out</button>
+  </div>
+  <div class="layout">
+    <nav class="side" id="side"></nav>
+    <main class="main" id="main"><div class="loading">Loading…</div></main>
+  </div>
+<script>
+let S = { schema:null, content:null, group:0, dirty:false };
+const $ = id => document.getElementById(id);
+function el(tag, cls, txt){ const e=document.createElement(tag); if(cls)e.className=cls; if(txt!=null)e.textContent=txt; return e; }
+function getPath(obj, p){ return !p ? obj : p.split('.').reduce((o,k)=>(o==null?undefined:o[k]), obj); }
+
+async function boot(){
+  let r;
+  try { r = await fetch('/api/admin/content'); }
+  catch { $('main').innerHTML='<div class="loading">Network error.</div>'; return; }
+  if (r.status===401){ location.href='/admin/verify.html'; return; }
+  if (!r.ok){ $('main').innerHTML='<div class="loading">Could not load.</div>'; return; }
+  const d = await r.json(); S.schema=d.schema; S.content=d.content;
+  renderSide(); renderGroup(); $('status').textContent='';
+}
+
+function renderSide(){
+  const side=$('side'); side.innerHTML='';
+  S.schema.groups.forEach((g,i)=>{
+    const a=el('a', i===S.group?'active':'', g.label);
+    a.onclick=()=>{ S.group=i; renderSide(); renderGroup(); window.scrollTo(0,0); };
+    side.appendChild(a);
+  });
+}
+
+function renderGroup(){
+  const main=$('main'); main.innerHTML='';
+  S.schema.groups[S.group].sections.forEach(sec=>main.appendChild(renderSection(sec)));
+}
+
+function renderSection(sec){
+  const card=el('div','section-card'); card.appendChild(el('h2','section-title',sec.label));
+  if (sec.type==='list_root'){
+    let arr=getPath(S.content,sec.path); if(!Array.isArray(arr))arr=[];
+    card.appendChild(renderList(arr, sec.item_fields, sec.item_label||'Item', sec.summary_field));
+  } else {
+    let obj=getPath(S.content,sec.path); if(obj==null)obj={};
+    sec.fields.forEach(f=>card.appendChild(renderField(obj,f)));
+  }
+  return card;
+}
+
+function renderField(obj,f){
+  if (f.type==='list'){
+    if(!Array.isArray(obj[f.id]))obj[f.id]=[];
+    const w=el('div','field'); w.appendChild(el('label','',f.label));
+    w.appendChild(renderList(obj[f.id], f.item_fields, f.item_label||'Item', f.summary_field));
+    return w;
+  }
+  if (f.type==='list_text'){ if(!Array.isArray(obj[f.id]))obj[f.id]=[]; return renderListText(obj,f); }
+  if (f.type==='bool'){
+    const w=el('div','field bool'); const cb=el('input'); cb.type='checkbox'; cb.checked=!!obj[f.id];
+    cb.onchange=()=>{ obj[f.id]=cb.checked; markDirty(); };
+    const id='cb'+Math.random().toString(36).slice(2,7); cb.id=id;
+    const lab=el('label','',f.label); lab.setAttribute('for',id);
+    w.appendChild(cb); w.appendChild(lab); return w;
+  }
+  const w=el('div','field'); w.appendChild(el('label','',f.label));
+  const inp = f.type==='textarea_html' ? el('textarea') : (()=>{const i=el('input'); i.type='text'; return i;})();
+  inp.value = obj[f.id]!=null ? obj[f.id] : '';
+  inp.oninput=()=>{ obj[f.id]=inp.value; markDirty(); };
+  w.appendChild(inp); return w;
+}
+
+function renderListText(obj,f){
+  const w=el('div','field'); w.appendChild(el('label','',f.label));
+  const wrap=el('div','listwrap'); const arr=obj[f.id];
+  function redraw(){
+    wrap.innerHTML='';
+    arr.forEach((val,i)=>{
+      const row=el('div','row-text'); const inp=el('input'); inp.type='text'; inp.value=val!=null?val:'';
+      inp.oninput=()=>{ arr[i]=inp.value; markDirty(); };
+      const del=el('button','mini del','✕'); del.onclick=()=>{ arr.splice(i,1); redraw(); markDirty(); };
+      row.appendChild(inp); row.appendChild(del); wrap.appendChild(row);
+    });
+    const add=el('button','mini add','+ Add'); add.onclick=()=>{ arr.push(''); redraw(); markDirty(); };
+    wrap.appendChild(add);
+  }
+  redraw(); w.appendChild(wrap); return w;
+}
+
+function renderList(arr, itemFields, itemLabel, summaryField){
+  const wrap=el('div','listwrap');
+  function blank(){ const o={}; itemFields.forEach(f=>{ o[f.id]=(f.type==='bool')?false:''; }); return o; }
+  function redraw(){
+    wrap.innerHTML='';
+    arr.forEach((item,i)=>{
+      const card=el('div','item-card'); const head=el('div','item-head');
+      head.appendChild(el('span','nm',(summaryField&&item[summaryField])?String(item[summaryField]).slice(0,40):(itemLabel+' '+(i+1))));
+      const ctrls=el('span');
+      if(i>0){ const up=el('button','mini','↑'); up.onclick=()=>{ [arr[i-1],arr[i]]=[arr[i],arr[i-1]]; redraw(); markDirty(); }; ctrls.appendChild(up); }
+      const del=el('button','mini del','Remove'); del.onclick=()=>{ arr.splice(i,1); redraw(); markDirty(); }; ctrls.appendChild(del);
+      head.appendChild(ctrls); card.appendChild(head);
+      itemFields.forEach(f=>card.appendChild(renderField(item,f)));
+      wrap.appendChild(card);
+    });
+    const add=el('button','mini add','+ Add '+itemLabel); add.onclick=()=>{ arr.push(blank()); redraw(); markDirty(); };
+    wrap.appendChild(add);
+  }
+  redraw(); return wrap;
+}
+
+function markDirty(){ S.dirty=true; $('status').textContent='Unsaved changes'; }
+
+async function save(){
+  $('save').disabled=true; $('status').textContent='Saving…';
+  try {
+    const r=await fetch('/api/admin/content',{ method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({content:S.content}) });
+    if(r.status===401){ location.href='/admin/verify.html'; return; }
+    const d=await r.json().catch(()=>({}));
+    if(r.ok){ S.dirty=false; $('status').textContent=d.deployed?'Saved · site updating (~1 min)':'Saved'; }
+    else { $('status').textContent=d.error||'Save failed'; }
+  } catch { $('status').textContent='Network error'; }
+  $('save').disabled=false;
+}
+
+$('save').onclick=save;
+$('logout').onclick=async()=>{ await fetch('/api/admin/logout',{method:'POST'}); location.href='/admin/verify.html'; };
+window.addEventListener('beforeunload', e=>{ if(S.dirty){ e.preventDefault(); e.returnValue=''; } });
+boot();
+</script>
+</body>
+</html>

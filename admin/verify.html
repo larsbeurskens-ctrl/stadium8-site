@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Stadium 8 · Admin login</title>
+<style>
+  :root { --yellow:#FFD400; --ink:#0E0E0E; --line:rgba(255,255,255,.14); --muted:#9a9a9a; }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background:var(--ink); color:#fff; font-family:Inter,system-ui,-apple-system,sans-serif; padding:24px; }
+  .card { width:100%; max-width:380px; background:#141414; border:1px solid var(--line); border-radius:16px; padding:34px 30px; }
+  .logo { font-weight:800; font-size:1.4rem; letter-spacing:-.01em; margin:0 0 4px; }
+  .logo b { color:var(--yellow); }
+  p.sub { color:var(--muted); font-size:.9rem; margin:0 0 22px; }
+  label { display:block; font-size:.8rem; font-weight:600; margin:0 0 7px; color:#ddd; }
+  input { width:100%; padding:12px 13px; border-radius:10px; border:1px solid var(--line);
+    background:#0E0E0E; color:#fff; font-size:1rem; }
+  input:focus { outline:none; border-color:var(--yellow); }
+  button { width:100%; margin-top:16px; padding:12px; border:none; border-radius:10px; background:var(--yellow);
+    color:#000; font-weight:700; font-size:1rem; cursor:pointer; }
+  button:disabled { opacity:.6; cursor:default; }
+  .err { color:#ff6b6b; font-size:.85rem; margin-top:12px; min-height:1.1em; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <p class="logo">Stadium <b>8</b></p>
+    <p class="sub">Enter your password to edit the website.</p>
+    <label for="pw">Password</label>
+    <input id="pw" type="password" autocomplete="current-password" autofocus />
+    <button id="go">Log in</button>
+    <div class="err" id="err"></div>
+  </div>
+<script>
+  const pw = document.getElementById('pw'), go = document.getElementById('go'), err = document.getElementById('err');
+  async function submit() {
+    err.textContent = ''; go.disabled = true; go.textContent = 'Checking...';
+    try {
+      const r = await fetch('/api/admin/login', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: pw.value }) });
+      if (r.ok) { location.href = '/admin/'; return; }
+      const d = await r.json().catch(() => ({}));
+      err.textContent = d.error || 'Login failed.';
+    } catch (e) { err.textContent = 'Network error - try again.'; }
+    go.disabled = false; go.textContent = 'Log in';
+  }
+  go.addEventListener('click', submit);
+  pw.addEventListener('keydown', e => { if (e.key === 'Enter') submit(); });
+</script>
+</body>
+</html>
