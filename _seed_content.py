@@ -1,0 +1,257 @@
+#!/usr/bin/env python3
+# Seeds content.json from current site copy. content.json is the source of truth after this.
+import json, pathlib
+ROOT = pathlib.Path("/Users/larsbeurskens/Documents/stadium8-site")
+C = {"version": 1}
+
+C["brand"] = {
+  "phone": "+506 8636 4357",
+  "whatsapp": "https://wa.me/50686364357",
+  "email": "stadium8sportcenter@gmail.com",
+  "instagram": "https://www.instagram.com/stadium.8",
+  "facebook": "https://www.facebook.com/stadium8samara/",
+  "map": "https://www.google.com/maps?q=Stadium%208%20Sport%20Center%20Samara%20Costa%20Rica&output=embed",
+  "address_html": "600m West of Super Iguana Verde,<br>Route 160, Samara, Guanacaste, Costa Rica",
+  "hours_en": "Mon-Fri 7am-8pm · Sat 7am-3pm · Sun closed",
+  "hours_es": "Lun-Vie 7am-8pm · Sáb 7am-3pm · Dom cerrado",
+}
+
+C["nav"] = {
+  "field_en": "Field &amp; courts", "field_es": "Cancha",
+  "gym_en": "Gym &amp; training", "gym_es": "Gimnasio",
+  "classes_en": "Classes", "classes_es": "Clases",
+  "hours_en": "Hours &amp; fees", "hours_es": "Horarios",
+  "book_en": "Book the field", "book_es": "Reservar la cancha",
+}
+
+C["shared"] = {
+  "book": {
+    "kicker_en": "Reserve online", "kicker_es": "Reservá en línea",
+    "h3_en": "Book the field", "h3_es": "Reservá la cancha",
+    "p_en": "Choose football, open-court sports or a birthday party, pick your time and you're set. Pay cash on the day - no card needed.",
+    "p_es": "Elegí fútbol, deportes de cancha o un cumpleaños, escogé tu hora y listo. Pagás en efectivo el mismo día - sin tarjeta.",
+  },
+  "smoothie": {
+    "eyebrow_en": "Watch. Refuel. Repeat.", "eyebrow_es": "Mirá. Recargá. Repetí.",
+    "h2_en": "The sports bar", "h2_es": "El bar deportivo",
+    "p_en": "Live football on the big screen, cold drinks and snacks. Beer ₡1,500 · Powerade ₡1,500 · Water ₡1,000 · Fresco ₡1,000. Fast food coming soon.",
+    "p_es": "Fútbol en vivo en pantalla grande, bebidas frías y algo para picar. Cerveza ₡1.500 · Powerade ₡1.500 · Agua ₡1.000 · Fresco ₡1.000. Comida rápida muy pronto.",
+  },
+  "contact": {
+    "hours_label_en": "Opening hours", "hours_label_es": "Horario",
+    "find_label_en": "Find us", "find_label_es": "Dónde estamos",
+    "contact_label_en": "Contact", "contact_label_es": "Contacto",
+  },
+}
+
+C["home"] = {
+  "hero": {
+    "eyebrow_en": "Samara &middot; Guanacaste &middot; Costa Rica", "eyebrow_es": "Sámara &middot; Guanacaste &middot; Costa Rica",
+    "h1_en": "Samara's home of <span>sport</span>.", "h1_es": "La casa del <span>deporte</span> en Sámara.",
+    "lead_en": "Rent the football field, train in the full gym, jump into a class, or throw a birthday the kids will not forget. One place, every way to move.",
+    "lead_es": "Alquilá la cancha de fútbol, entrená en el gimnasio completo, metete a una clase o armá un cumpleaños que los chicos no van a olvidar. Un solo lugar, todas las formas de moverte.",
+    "cta1_en": "Book the field &rarr;", "cta1_es": "Reservá la cancha &rarr;",
+    "cta2_en": "See classes", "cta2_es": "Ver clases",
+  },
+  "pick": {
+    "kicker_en": "What's on", "kicker_es": "Qué hay",
+    "h2_en": "Pick your game", "h2_es": "Elegí tu juego",
+    "p_en": "From a kickabout with friends to a full week of training - here's everything happening under one roof.",
+    "p_es": "Desde un partidito con amigos hasta una semana completa de entrenamiento - acá está todo lo que pasa bajo un mismo techo.",
+    "cards": [
+      {"feature": True, "href_en": "/field/#book", "href_es": "/es/cancha/#book",
+       "tag_en": "Book online", "tag_es": "Reservá en línea", "h_en": "Field &amp; courts", "h_es": "Cancha",
+       "p_en": "Football 5, open-court sports and birthday parties. Reserve in seconds.", "p_es": "Fútbol 5, deportes de cancha y cumpleaños. Reservá tu espacio en segundos.",
+       "go_en": "Book the field &rarr;", "go_es": "Reservá la cancha &rarr;"},
+      {"feature": False, "href_en": "/gym/", "href_es": "/es/gimnasio/",
+       "tag_en": "Open daily", "tag_es": "Abierto a diario", "h_en": "Full gym", "h_es": "Gimnasio",
+       "p_en": "Free weights, machines and cardio. Drop in or train with a coach.", "p_es": "Pesas libres, máquinas y cardio. Entrá por el día o entrená con coach.",
+       "go_en": "More &rarr;", "go_es": "Más &rarr;"},
+      {"feature": False, "href_en": "/classes/", "href_es": "/es/clases/",
+       "tag_en": "All levels", "tag_es": "Todos los niveles", "h_en": "Group classes", "h_es": "Clases grupales",
+       "p_en": "Hybrid training, martial arts, pilates and spinning with Samara's own coaches.", "p_es": "Entrenamiento híbrido, artes marciales, pilates y spinning con los coaches de Sámara.",
+       "go_en": "See the classes &rarr;", "go_es": "Ver las clases &rarr;"},
+      {"feature": False, "href_en": "/gym/", "href_es": "/es/gimnasio/",
+       "tag_en": "One on one", "tag_es": "Uno a uno", "h_en": "Personal training", "h_es": "Entrenamiento personal",
+       "p_en": "Custom programmes for kids and adults, built around your goals.", "p_es": "Programas a medida para niños y adultos, según tus objetivos.",
+       "go_en": "More &rarr;", "go_es": "Más &rarr;"},
+      {"feature": False, "href_en": "/field/#book", "href_es": "/es/cancha/#book",
+       "tag_en": "Parties", "tag_es": "Fiestas", "h_en": "Birthday parties", "h_es": "Cumpleaños",
+       "p_en": "The field, the space and the energy. We host, you celebrate.", "p_es": "La cancha, el espacio y la energía. Nosotros recibimos, vos celebrás.",
+       "go_en": "Enquire &rarr;", "go_es": "Consultá &rarr;"},
+      {"feature": False, "href_en": "#smoothie", "href_es": "#smoothie",
+       "tag_en": "Watch the match", "tag_es": "Mirá el partido", "h_en": "Sports bar", "h_es": "Bar deportivo",
+       "p_en": "Live football, cold drinks and snacks. Fast food coming soon.", "p_es": "Fútbol en vivo, bebidas frías y algo para picar. Comida rápida muy pronto.",
+       "go_en": "More &rarr;", "go_es": "Más &rarr;"},
+    ],
+  },
+  "facility": {
+    "kicker_en": "The facility", "kicker_es": "Las instalaciones",
+    "h2_en": "Everything you need to train", "h2_es": "Todo lo que necesitás para entrenar",
+    "p_en": "Samara's only full sports center. Lift in the gym, play on the pitch, take a class, or just relax with a game of bocce. Whatever your level, there's a place for you here.",
+    "p_es": "El único centro deportivo completo de Sámara. Levantá en el gimnasio, jugá en la cancha, tomá una clase o relajate con un juego de bocce. Sea cual sea tu nivel, hay un lugar para vos acá.",
+    "items_en": ["Full gym - free weights, machines and cardio", "Football field for matches, pick-up games and rentals", "Group classes: hybrid training, martial arts, pilates, spinning, aerial silk", "Personal training for kids and adults", "A sports bar to refuel and watch the match"],
+    "items_es": ["Gimnasio completo - pesas libres, máquinas y cardio", "Cancha de fútbol para partidos, mejengas y alquiler", "Clases grupales: entrenamiento híbrido, artes marciales, pilates, spinning, acrobacia aérea", "Entrenamiento personal para niños y adultos", "Un bar deportivo para recargar y ver el partido"],
+    "btn_en": "Explore the gym &rarr;", "btn_es": "Conocé el gimnasio &rarr;",
+  },
+  "classes_head": {
+    "kicker_en": "Move with us", "kicker_es": "Movete con nosotros",
+    "h2_en": "Classes for every level", "h2_es": "Clases para todos los niveles",
+    "p_en": "Each class has its own page with the schedule, the coach and what to bring. Tap to learn more - message us to reserve your spot.",
+    "p_es": "Cada clase tiene su propia página con el horario, el coach y qué traer. Tocá para ver más - escribinos para reservar tu lugar.",
+  },
+  "visit": {
+    "kicker_en": "Plan your visit", "kicker_es": "Planeá tu visita",
+    "h2_en": "Hours &amp; where to find us", "h2_es": "Horario y dónde encontrarnos",
+  },
+}
+
+C["field"] = {
+  "eyebrow_en": "Reserve online", "eyebrow_es": "Reservá en línea",
+  "h1_en": "Field &amp; <span>courts</span>", "h1_es": "<span>Cancha</span> y canchas",
+  "lead_en": "Book the football field, open-court sports or a birthday - pick your time and pay cash on the day.",
+  "lead_es": "Reservá la cancha de fútbol, deportes de cancha o un cumpleaños - elegí tu hora y pagás en efectivo el mismo día.",
+  "whatbook_kicker_en": "What you can book", "whatbook_kicker_es": "Qué podés reservar",
+  "whatbook_h2_en": "One pitch, every game", "whatbook_h2_es": "Una cancha, todos los juegos",
+  "cards": [
+    {"h_en": "Football 5", "h_es": "Fútbol 5",
+     "p_en": "Five-a-side (5v5) for men, women and kids. ₡10,000 per team or ₡20,000 per hour. Reserve on WhatsApp, plan online and find a match.",
+     "p_es": "Cinco contra cinco (5v5) para hombres, mujeres y niños. ₡10.000 por equipo o ₡20.000 por hora. Reservá por WhatsApp, planeá en línea y buscá reto."},
+    {"h_en": "Open-court sports", "h_es": "Deportes de cancha",
+     "p_en": "Volleyball, badminton, handball, ultimate frisbee, athletics, foot-tennis or free court time. ₡2,000 per person.",
+     "p_es": "Voleibol, bádminton, handball, ultimate frisbee, atletismo, fútbol-tenis o cancha libre. ₡2.000 por persona."},
+    {"h_en": "Birthdays &amp; events", "h_es": "Cumpleaños y eventos",
+     "p_en": "Birthday parties and private events - the field, the space and the energy. Price depends on the event.",
+     "p_es": "Cumpleaños y eventos privados - la cancha, el espacio y la energía. El precio depende del evento."},
+  ],
+  "footnote_en": "Football 5: ₡10,000/team or ₡20,000/hour · Open-court sports: ₡2,000/person · Birthdays &amp; events: price on request. Full list on ",
+  "footnote_es": "Fútbol 5: ₡10.000/equipo o ₡20.000/hora · Deportes de cancha: ₡2.000/persona · Cumpleaños y eventos: precio a consultar. Lista completa en ",
+}
+
+C["gym"] = {
+  "eyebrow_en": "Open daily", "eyebrow_es": "Abierto a diario",
+  "h1_en": "Gym &amp; <span>training</span>", "h1_es": "<span>Gimnasio</span> y entreno",
+  "lead_en": "A full gym, personal training for kids and adults, and the space to train however you like.",
+  "lead_es": "Un gimnasio completo, entrenamiento personal para niños y adultos, y el espacio para entrenar como más te guste.",
+  "gym_kicker_en": "The gym", "gym_kicker_es": "El gimnasio",
+  "gym_h2_en": "Lift, sweat, repeat", "gym_h2_es": "Levantá, sudá, repetí",
+  "gym_p_en": "Free weights, machines and cardio under one roof. Drop in for a session or train with one of our coaches - whatever your level, there's room to work.",
+  "gym_p_es": "Pesas libres, máquinas y cardio bajo un mismo techo. Entrá por una sesión o entrená con uno de nuestros coaches - sea cual sea tu nivel, hay espacio para trabajar.",
+  "gym_items_en": ["Free weights and racks", "Resistance machines", "Cardio equipment", "Open daily - hours on the Hours &amp; fees page"],
+  "gym_items_es": ["Pesas libres y racks", "Máquinas de resistencia", "Equipo de cardio", "Abierto a diario - horario en la página de Horarios y precios"],
+  "gym_btn_en": "Hours &amp; drop-in rates &rarr;", "gym_btn_es": "Horario y tarifas &rarr;",
+  "gym_imgslot_en": "[ Photo slot - gym interior: assets/img/gym.jpg ]", "gym_imgslot_es": "[ Espacio para foto - interior del gimnasio: assets/img/gym.jpg ]",
+  "hybrid_kicker_en": "Train with Noe", "hybrid_kicker_es": "Entrená con Noe",
+  "hybrid_h2_en": "Hybrid Training", "hybrid_h2_es": "Entrenamiento Híbrido",
+  "hybrid_p_en": "Strength and cardio in one program with Samara Workout. Build real muscle and endurance, burn fat and perform better - and every session is different. All levels welcome.",
+  "hybrid_p_es": "Fuerza y cardio en un solo programa con Samara Workout. Ganá músculo y resistencia real, quemá grasa y rendí mejor - y cada sesión es diferente. Todos los niveles.",
+  "hybrid_items_en": ["Mon-Fri 7am &amp; 8pm, Sat 7am &amp; 3pm (extra 6am Mon/Wed/Fri)", "₡25,000 / month · ₡10,000 / week · ₡3,000 / day", "Coach Noe · all levels"],
+  "hybrid_items_es": ["Lun-Vie 7am y 8pm, Sáb 7am y 3pm (extra 6am Lun/Mié/Vie)", "₡25.000 / mes · ₡10.000 / semana · ₡3.000 / día", "Coach Noe · todos los niveles"],
+  "hybrid_btn_en": "Hybrid Training details &rarr;", "hybrid_btn_es": "Ver Entrenamiento Híbrido &rarr;",
+  "pt_kicker_en": "One on one", "pt_kicker_es": "Uno a uno",
+  "pt_h2_en": "Personal training", "pt_h2_es": "Entrenamiento personal",
+  "pt_lead_en": "Custom programmes for kids and adults, built around your goals.", "pt_lead_es": "Programas a medida para niños y adultos, según tus objetivos.",
+  "pt_body_en": "One-on-one coaching with Jeffry Z., a certified personal trainer and Human Movement Sciences student. Customized workout plans, one-on-one sessions and online coaching - for weight loss, muscle gain or just better health. Your first consultation is free.",
+  "pt_body_es": "Entrenamiento uno a uno con Jeffry Z., entrenador personal certificado y estudiante de Ciencias del Movimiento Humano. Rutinas personalizadas, sesiones uno a uno y coaching en línea - para bajar de peso, ganar músculo o simplemente estar más sano. La primera consulta es gratis.",
+  "pt_wa_label_en": "WhatsApp Jeffry +506 8342 3808 &rarr;", "pt_wa_label_es": "WhatsApp Jeffry +506 8342 3808 &rarr;",
+  "pt_link_en": "Personal training details &rarr;", "pt_link_es": "Ver entrenamiento personal &rarr;",
+}
+
+C["classes_page"] = {
+  "eyebrow_en": "Move with us", "eyebrow_es": "Movete con nosotros",
+  "h1_en": "Classes for every <span>level</span>", "h1_es": "Clases para todos los <span>niveles</span>",
+  "lead_en": "Hybrid training, martial arts, pilates, spinning, aerial silk and personal training with Samara's own coaches. Tap a class for the details - message us to reserve.",
+  "lead_es": "Entrenamiento híbrido, artes marciales, pilates, spinning, acrobacia aérea y entrenamiento personal con los coaches de Sámara. Tocá una clase para ver los detalles - escribinos para reservar.",
+  "tt_kicker_en": "Timetable", "tt_kicker_es": "Horario",
+  "tt_h2_en": "Weekly schedule", "tt_h2_es": "Programa semanal",
+  "tt_p_en": "Each class keeps its own times - open a class above for the full schedule. Quick guide:",
+  "tt_p_es": "Cada clase tiene su propio horario - abrí una clase arriba para verlo completo. Guía rápida:",
+  "tt_items_en": ["Hybrid Training - Mon-Fri 7am &amp; 8pm, Sat 7am &amp; 3pm (extra 6am Mon/Wed/Fri)", "Martial Arts - adults &amp; kids, mornings &amp; evenings (BJJ &amp; MMA)", "Pilates Reformer - Mon-Fri 8am-5pm", "Spinning - selected afternoons 4:30 &amp; 5:30pm", "Aerial Silk - Tue &amp; Thu 3:30pm (kids too)", "Personal Training - by appointment"],
+  "tt_items_es": ["Entrenamiento Híbrido - Lun-Vie 7am y 8pm, Sáb 7am y 3pm (extra 6am Lun/Mié/Vie)", "Artes Marciales - adultos y niños, mañanas y tardes (BJJ y MMA)", "Pilates Reformer - Lun-Vie 8am-5pm", "Spinning - tardes seleccionadas 4:30 y 5:30pm", "Acrobacia Aérea - Mar y Jue 3:30pm (también niños)", "Entrenamiento Personal - con cita previa"],
+  "reserve_note_en": "Classes are reserved by message.", "reserve_note_es": "Las clases se reservan por mensaje.",
+}
+
+C["hours"] = {
+  "eyebrow_en": "Plan your visit", "eyebrow_es": "Planeá tu visita",
+  "h1_en": "Hours &amp; <span>fees</span>", "h1_es": "<span>Horarios</span> y precios",
+  "lead_en": "Everything you need to plan a visit - what it costs, when we're open and how to find us.",
+  "lead_es": "Todo lo que necesitás para planear una visita - cuánto cuesta, cuándo abrimos y cómo encontrarnos.",
+  "fees_kicker_en": "Fees", "fees_kicker_es": "Precios",
+  "fees_h2_en": "What it costs", "fees_h2_es": "Cuánto cuesta",
+  "caption_en": "Prices in colones (₡)", "caption_es": "Precios en colones (₡)",
+  "rows": [
+    {"a_en": "Football 5", "a_es": "Fútbol 5", "b_en": "per team / per hour", "b_es": "por equipo / por hora", "c_en": "₡10,000 / ₡20,000", "c_es": "₡10.000 / ₡20.000"},
+    {"a_en": "Open-court sports", "a_es": "Deportes de cancha", "b_en": "volleyball, badminton, handball, ultimate, athletics, foot-tennis", "b_es": "voleibol, bádminton, handball, ultimate, atletismo, fútbol-tenis", "c_en": "₡2,000 / person", "c_es": "₡2.000 / persona"},
+    {"a_en": "Hybrid Training", "a_es": "Entrenamiento Híbrido", "b_en": "month / week / day", "b_es": "mes / semana / día", "c_en": "₡25,000 / ₡10,000 / ₡3,000", "c_es": "₡25.000 / ₡10.000 / ₡3.000"},
+    {"a_en": "Other classes", "a_es": "Otras clases", "b_en": "pilates, spinning, martial arts, personal training", "b_es": "pilates, spinning, artes marciales, entreno personal", "c_en": "Ask the trainer", "c_es": "Consultá al entrenador"},
+    {"a_en": "Birthdays &amp; events", "a_es": "Cumpleaños y eventos", "b_en": "private events", "b_es": "eventos privados", "c_en": "Price on request", "c_es": "Precio a consultar"},
+    {"a_en": "Sports bar", "a_es": "Bar deportivo", "b_en": "beer / Powerade / water / fresco", "b_es": "cerveza / Powerade / agua / fresco", "c_en": "₡1,500 / ₡1,500 / ₡1,000 / ₡1,000", "c_es": "₡1.500 / ₡1.500 / ₡1.000 / ₡1.000"},
+  ],
+  "note_en": "Class prices for pilates, spinning, martial arts and personal training are set by each trainer - just ask on WhatsApp. Gym drop-in rates coming soon.",
+  "note_es": "Los precios de pilates, spinning, artes marciales y entrenamiento personal los pone cada entrenador - consultá por WhatsApp. Tarifas del gimnasio por día muy pronto.",
+  "visit_kicker_en": "Plan your visit", "visit_kicker_es": "Planeá tu visita",
+  "visit_h2_en": "Hours &amp; where to find us", "visit_h2_es": "Horario y dónde encontrarnos",
+}
+
+C["class_labels"] = {
+  "en": {"eyebrow": "Class", "about": "About the class", "details": "Details", "sched": "Schedule", "inst": "Instructor", "level": "Level", "price": "Price", "back": "All classes",
+         "note": "Classes are reserved by message - no online booking needed. Times can change; the trainer can update this anytime."},
+  "es": {"eyebrow": "Clase", "about": "Sobre la clase", "details": "Detalles", "sched": "Horario", "inst": "Instructor", "level": "Nivel", "price": "Precio", "back": "Todas las clases",
+         "note": "Las clases se reservan por mensaje - sin reserva en línea. Los horarios pueden cambiar; el entrenador lo puede actualizar cuando quiera."},
+}
+
+C["classes"] = [
+  {"key": "hybrid", "img": "noe workout 1.png", "slug_en": "hybrid-training", "slug_es": "entrenamiento-hibrido", "en": "Hybrid Training", "es": "Entrenamiento Híbrido",
+   "tag_en": "Strength + cardio. Build muscle and endurance in one session.", "tag_es": "Fuerza + cardio. Músculo y resistencia en una sola sesión.",
+   "desc_en": "Strength and cardio in one program, so you never have to choose between being strong and having endurance. Every session is different (zero boredom): you build real muscle and strength, improve your stamina, burn fat faster and perform better both in the gym and outside it. Run by Samara Workout with coach Noe.",
+   "desc_es": "Fuerza y cardio en un solo programa, para que no tengás que elegir entre ser fuerte o tener resistencia. Cada sesión es diferente (cero aburrimiento): ganás músculo y fuerza real, mejorás tu resistencia, quemás grasa más rápido y rendís mejor dentro y fuera del gym. A cargo de Samara Workout con el entrenador Noe.",
+   "sched_en": "Mon-Fri 7am &amp; 8pm · Sat 7am &amp; 3pm · Extra 6am on Mon/Wed/Fri", "sched_es": "Lun-Vie 7am y 8pm · Sáb 7am y 3pm · Extra 6am Lun/Mié/Vie",
+   "inst": "Noe - Samara Workout", "level_en": "All levels", "level_es": "Todos los niveles",
+   "price_en": "₡25,000 / month · ₡10,000 / week · ₡3,000 / day", "price_es": "₡25.000 / mes · ₡10.000 / semana · ₡3.000 / día",
+   "wa": "https://wa.me/50686364357", "wal_en": "WhatsApp to reserve +506 8636 4357", "wal_es": "WhatsApp para reservar +506 8636 4357"},
+  {"key": "martial", "img": "martialart 2.png", "slug_en": "martial-arts", "slug_es": "artes-marciales", "en": "Martial Arts", "es": "Artes Marciales",
+   "tag_en": "Brazilian Jiu-Jitsu &amp; MMA for adults, teens and kids.", "tag_es": "Jiu-Jitsu Brasileño y MMA para adultos, jóvenes y niños.",
+   "desc_en": "Grappling and striking with Pura Vida Martial Arts: Brazilian Jiu-Jitsu (Gi and No-Gi) and MMA. Adults, teenagers and kids, all levels welcome. Train hard, stay humble, live Pura Vida - all levels, all goals, one family.",
+   "desc_es": "Grappling y striking con Pura Vida Martial Arts: Jiu-Jitsu Brasileño (con Gi y sin Gi) y MMA. Adultos, jóvenes y niños, todos los niveles bienvenidos. Entrená duro, mantené la humildad, viví la pura vida - todos los niveles, todas las metas, una sola familia.",
+   "sched_en": "Adults BJJ: Mon/Wed/Fri 10-11am &amp; 5-6pm, Tue/Thu 9:30-10:30am &amp; 5-6pm · Kids: Mon&amp;Wed / Tue&amp;Thu 3:30-4:30pm, Sat 10:15-11:15am", "sched_es": "BJJ adultos: Lun/Mié/Vie 10-11am y 5-6pm, Mar/Jue 9:30-10:30am y 5-6pm · Niños: Lun y Mié / Mar y Jue 3:30-4:30pm, Sáb 10:15-11:15am",
+   "inst": "Oli - Pura Vida Martial Arts", "level_en": "All levels · adults, teens &amp; kids", "level_es": "Todos los niveles · adultos, jóvenes y niños",
+   "price_en": "Ask Oli for class prices", "price_es": "Consultá los precios con Oli",
+   "wa": "https://wa.me/50686162810", "wal_en": "WhatsApp Oli +506 8616 2810", "wal_es": "WhatsApp Oli +506 8616 2810"},
+  {"key": "pilates", "img": "pilates.jpg", "slug_en": "pilates-reformer", "slug_es": "pilates-reformer", "en": "Pilates Reformer", "es": "Pilates Reformer",
+   "tag_en": "Low-impact, fast results. Posture, core and flexibility.", "tag_es": "Bajo impacto, resultados rápidos. Postura, core y flexibilidad.",
+   "desc_en": "Personalized Reformer Pilates on 2 beds plus a Wunda chair, in small groups of up to 3 and adapted to every level. Low impact with fast results: improve your posture and ease chronic pain by strengthening the core, gain flexibility, sharpen concentration and coordination, and use the breath as part of every movement.",
+   "desc_es": "Pilates Reformer personalizado en 2 camas más una silla Wunda, en grupos pequeños de máximo 3 y adaptado a todos los niveles. Bajo impacto con resultados rápidos: mejorá tu postura y eliminá dolores crónicos fortaleciendo el core, ganá flexibilidad, trabajá la concentración y la coordinación, y usá la respiración como parte del movimiento.",
+   "sched_en": "Mon-Fri 8am-5pm", "sched_es": "Lun-Vie 8am-5pm",
+   "inst": "Wellness studio", "level_en": "All levels · max 3 per class", "level_es": "Todos los niveles · máx. 3 por clase",
+   "price_en": "Ask for class prices", "price_es": "Consultá los precios",
+   "wa": "https://wa.me/50686364357", "wal_en": "WhatsApp to reserve +506 8636 4357", "wal_es": "WhatsApp para reservar +506 8636 4357"},
+  {"key": "spinning", "img": "spinning.jpg", "slug_en": "spinning", "slug_es": "spinning", "en": "Spinning", "es": "Spinning",
+   "tag_en": "Intense cardio on the bike. Low impact, big burn.", "tag_es": "Cardio intenso en la bici. Bajo impacto, gran quema.",
+   "desc_en": "Personalized spinning on 5 bikes, in small groups of up to 5 and open to every level. Burn calories and build endurance with intense cardiovascular training: tone legs and glutes, release endorphins and use your breath to guide the movement, all in a low-impact session.",
+   "desc_es": "Spinning personalizado en 5 bicicletas, en grupos pequeños de máximo 5 y para todos los niveles. Quemá calorías y mejorá tu resistencia con entrenamiento cardiovascular intenso: tonificá piernas y glúteos, liberá endorfinas y usá la respiración para guiar el movimiento, todo en una sesión de bajo impacto.",
+   "sched_en": "Selected days 4:30-5:30pm &amp; 5:30-6:30pm", "sched_es": "Días seleccionados 4:30-5:30pm y 5:30-6:30pm",
+   "inst": "Wellness studio", "level_en": "All levels · max 5 per class", "level_es": "Todos los niveles · máx. 5 por clase",
+   "price_en": "Ask for class prices", "price_es": "Consultá los precios",
+   "wa": "https://wa.me/50686364357", "wal_en": "WhatsApp to reserve +506 8636 4357", "wal_es": "WhatsApp para reservar +506 8636 4357"},
+  {"key": "aerial", "img": "silk areal.jpeg", "slug_en": "aerial-silk", "slug_es": "acrobacia-aerea", "en": "Aerial Silk", "es": "Acrobacia Aérea",
+   "tag_en": "Strength, grace and confidence on the silks.", "tag_es": "Fuerza, gracia y confianza en las telas.",
+   "desc_en": "Climb, wrap and pose on the aerial silks - a full-body workout that builds strength, flexibility and body awareness while you learn to move with control and grace. Open to adults and kids. Coached by Celeste.",
+   "desc_es": "Subí, envolvete y posá en las telas aéreas - un trabajo de cuerpo completo que desarrolla fuerza, flexibilidad y conciencia corporal mientras aprendés a moverte con control y gracia. Para adultos y niños. A cargo de la coach Celeste.",
+   "sched_en": "Tue &amp; Thu 3:30pm (kids classes too)", "sched_es": "Mar y Jue 3:30pm (también para niños)",
+   "inst": "Celeste", "level_en": "All levels · kids &amp; adults", "level_es": "Todos los niveles · niños y adultos",
+   "price_en": "₡6,000 / class · ₡20,000 / month", "price_es": "₡6.000 / clase · ₡20.000 / mes",
+   "wa": "https://wa.me/50687494771", "wal_en": "WhatsApp Celeste +506 8749 4771", "wal_es": "WhatsApp Celeste +506 8749 4771"},
+  {"key": "pt", "img": "personal trainer 1.png", "slug_en": "personal-training", "slug_es": "entrenamiento-personal", "en": "Personal Training", "es": "Entrenamiento Personal",
+   "tag_en": "One-on-one coaching built around your goals.", "tag_es": "Entrenamiento uno a uno según tus metas.",
+   "desc_en": "One-on-one coaching with Jeffry Z., a certified personal trainer and Human Movement Sciences (Physical Education) student. Whether it's weight loss, muscle gain or simply better health, you get a plan tailored to you: customized workout plans, one-on-one sessions and online coaching. Book a free consultation to start.",
+   "desc_es": "Entrenamiento uno a uno con Jeffry Z., entrenador personal certificado y estudiante de Ciencias del Movimiento Humano (Educación Física). Ya sea bajar de peso, ganar músculo o simplemente estar más sano, recibís un plan hecho para vos: rutinas personalizadas, sesiones uno a uno y coaching en línea. Reservá una consulta gratis para empezar.",
+   "sched_en": "By appointment", "sched_es": "Con cita previa",
+   "inst": "Jeffry Z. - certified trainer", "level_en": "All levels · kids &amp; adults", "level_es": "Todos los niveles · niños y adultos",
+   "price_en": "Free first consultation · ask for session rates", "price_es": "Primera consulta gratis · consultá las tarifas",
+   "wa": "https://wa.me/50683423808", "wal_en": "WhatsApp Jeffry +506 8342 3808", "wal_es": "WhatsApp Jeffry +506 8342 3808"},
+]
+
+(ROOT / "content.json").write_text(json.dumps(C, ensure_ascii=False, indent=2), encoding="utf-8")
+print("content.json written:", (ROOT / "content.json").stat().st_size, "bytes")
+print("sections:", list(C.keys()))
+print("classes:", len(C["classes"]), "| home cards:", len(C["home"]["pick"]["cards"]), "| field cards:", len(C["field"]["cards"]), "| hours rows:", len(C["hours"]["rows"]))

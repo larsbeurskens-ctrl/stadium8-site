@@ -1,0 +1,1195 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "global",
+      "label": "Global · brand & contact",
+      "sections": [
+        {
+          "id": "brand",
+          "path": "brand",
+          "label": "Brand & contact details",
+          "fields": [
+            {
+              "id": "phone",
+              "type": "text",
+              "label": "Phone"
+            },
+            {
+              "id": "whatsapp",
+              "type": "text",
+              "label": "WhatsApp link (wa.me URL)"
+            },
+            {
+              "id": "email",
+              "type": "text",
+              "label": "Email"
+            },
+            {
+              "id": "instagram",
+              "type": "text",
+              "label": "Instagram URL"
+            },
+            {
+              "id": "facebook",
+              "type": "text",
+              "label": "Facebook URL"
+            },
+            {
+              "id": "map",
+              "type": "text",
+              "label": "Google Maps embed URL"
+            },
+            {
+              "id": "address_html",
+              "type": "textarea_html",
+              "label": "Address (use <br> for line break)"
+            },
+            {
+              "id": "hours_en",
+              "type": "text",
+              "label": "Opening hours line (EN)"
+            },
+            {
+              "id": "hours_es",
+              "type": "text",
+              "label": "Opening hours line (ES)"
+            }
+          ]
+        },
+        {
+          "id": "nav",
+          "path": "nav",
+          "label": "Navigation labels",
+          "fields": [
+            {
+              "id": "field_en",
+              "type": "text",
+              "label": "Field nav label (EN)"
+            },
+            {
+              "id": "field_es",
+              "type": "text",
+              "label": "Field nav label (ES)"
+            },
+            {
+              "id": "gym_en",
+              "type": "text",
+              "label": "Gym nav label (EN)"
+            },
+            {
+              "id": "gym_es",
+              "type": "text",
+              "label": "Gym nav label (ES)"
+            },
+            {
+              "id": "classes_en",
+              "type": "text",
+              "label": "Classes nav label (EN)"
+            },
+            {
+              "id": "classes_es",
+              "type": "text",
+              "label": "Classes nav label (ES)"
+            },
+            {
+              "id": "hours_en",
+              "type": "text",
+              "label": "Hours nav label (EN)"
+            },
+            {
+              "id": "hours_es",
+              "type": "text",
+              "label": "Hours nav label (ES)"
+            },
+            {
+              "id": "book_en",
+              "type": "text",
+              "label": "Book button label (EN)"
+            },
+            {
+              "id": "book_es",
+              "type": "text",
+              "label": "Book button label (ES)"
+            }
+          ]
+        },
+        {
+          "id": "book",
+          "path": "shared.book",
+          "label": "Booking CTA block (field page)",
+          "fields": [
+            {
+              "id": "kicker_en",
+              "type": "text",
+              "label": "Kicker (EN)"
+            },
+            {
+              "id": "kicker_es",
+              "type": "text",
+              "label": "Kicker (ES)"
+            },
+            {
+              "id": "h3_en",
+              "type": "text",
+              "label": "Heading (EN)"
+            },
+            {
+              "id": "h3_es",
+              "type": "text",
+              "label": "Heading (ES)"
+            },
+            {
+              "id": "p_en",
+              "type": "textarea_html",
+              "label": "Paragraph (EN)"
+            },
+            {
+              "id": "p_es",
+              "type": "textarea_html",
+              "label": "Paragraph (ES)"
+            }
+          ]
+        },
+        {
+          "id": "smoothie",
+          "path": "shared.smoothie",
+          "label": "Sports bar band",
+          "fields": [
+            {
+              "id": "eyebrow_en",
+              "type": "text",
+              "label": "Eyebrow (EN)"
+            },
+            {
+              "id": "eyebrow_es",
+              "type": "text",
+              "label": "Eyebrow (ES)"
+            },
+            {
+              "id": "h2_en",
+              "type": "text",
+              "label": "Heading (EN)"
+            },
+            {
+              "id": "h2_es",
+              "type": "text",
+              "label": "Heading (ES)"
+            },
+            {
+              "id": "p_en",
+              "type": "textarea_html",
+              "label": "Paragraph (EN)"
+            },
+            {
+              "id": "p_es",
+              "type": "textarea_html",
+              "label": "Paragraph (ES)"
+            }
+          ]
+        },
+        {
+          "id": "contact",
+          "path": "shared.contact",
+          "label": "Contact block labels",
+          "fields": [
+            {
+              "id": "hours_label_en",
+              "type": "text",
+              "label": "Hours label (EN)"
+            },
+            {
+              "id": "hours_label_es",
+              "type": "text",
+              "label": "Hours label (ES)"
+            },
+            {
+              "id": "find_label_en",
+              "type": "text",
+              "label": "Find-us label (EN)"
+            },
+            {
+              "id": "find_label_es",
+              "type": "text",
+              "label": "Find-us label (ES)"
+            },
+            {
+              "id": "contact_label_en",
+              "type": "text",
+              "label": "Contact label (EN)"
+            },
+            {
+              "id": "contact_label_es",
+              "type": "text",
+              "label": "Contact label (ES)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home",
+      "label": "Home page",
+      "sections": [
+        {
+          "id": "home_hero",
+          "path": "home.hero",
+          "label": "Hero",
+          "fields": [
+            {
+              "id": "eyebrow_en",
+              "type": "text",
+              "label": "Eyebrow (EN)"
+            },
+            {
+              "id": "eyebrow_es",
+              "type": "text",
+              "label": "Eyebrow (ES)"
+            },
+            {
+              "id": "h1_en",
+              "type": "textarea_html",
+              "label": "Headline (use <span> for accent) (EN)"
+            },
+            {
+              "id": "h1_es",
+              "type": "textarea_html",
+              "label": "Headline (use <span> for accent) (ES)"
+            },
+            {
+              "id": "lead_en",
+              "type": "textarea_html",
+              "label": "Lead paragraph (EN)"
+            },
+            {
+              "id": "lead_es",
+              "type": "textarea_html",
+              "label": "Lead paragraph (ES)"
+            },
+            {
+              "id": "cta1_en",
+              "type": "text",
+              "label": "Button 1 label (EN)"
+            },
+            {
+              "id": "cta1_es",
+              "type": "text",
+              "label": "Button 1 label (ES)"
+            },
+            {
+              "id": "cta2_en",
+              "type": "text",
+              "label": "Button 2 label (EN)"
+            },
+            {
+              "id": "cta2_es",
+              "type": "text",
+              "label": "Button 2 label (ES)"
+            }
+          ]
+        },
+        {
+          "id": "home_pick",
+          "path": "home.pick",
+          "label": "\"Pick your game\" cards",
+          "fields": [
+            {
+              "id": "kicker_en",
+              "type": "text",
+              "label": "Kicker (EN)"
+            },
+            {
+              "id": "kicker_es",
+              "type": "text",
+              "label": "Kicker (ES)"
+            },
+            {
+              "id": "h2_en",
+              "type": "text",
+              "label": "Heading (EN)"
+            },
+            {
+              "id": "h2_es",
+              "type": "text",
+              "label": "Heading (ES)"
+            },
+            {
+              "id": "p_en",
+              "type": "textarea_html",
+              "label": "Intro paragraph (EN)"
+            },
+            {
+              "id": "p_es",
+              "type": "textarea_html",
+              "label": "Intro paragraph (ES)"
+            },
+            {
+              "id": "cards",
+              "type": "list",
+              "label": "Cards",
+              "item_label": "Card",
+              "item_fields": [
+                {
+                  "id": "feature",
+                  "type": "bool",
+                  "label": "Featured (large) card"
+                },
+                {
+                  "id": "href_en",
+                  "type": "text",
+                  "label": "Link (EN)"
+                },
+                {
+                  "id": "href_es",
+                  "type": "text",
+                  "label": "Link (ES)"
+                },
+                {
+                  "id": "tag_en",
+                  "type": "text",
+                  "label": "Tag (EN)"
+                },
+                {
+                  "id": "tag_es",
+                  "type": "text",
+                  "label": "Tag (ES)"
+                },
+                {
+                  "id": "h_en",
+                  "type": "text",
+                  "label": "Title (EN)"
+                },
+                {
+                  "id": "h_es",
+                  "type": "text",
+                  "label": "Title (ES)"
+                },
+                {
+                  "id": "p_en",
+                  "type": "textarea_html",
+                  "label": "Text (EN)"
+                },
+                {
+                  "id": "p_es",
+                  "type": "textarea_html",
+                  "label": "Text (ES)"
+                },
+                {
+                  "id": "go_en",
+                  "type": "text",
+                  "label": "Link label (EN)"
+                },
+                {
+                  "id": "go_es",
+                  "type": "text",
+                  "label": "Link label (ES)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "home_facility",
+          "path": "home.facility",
+          "label": "Facility section",
+          "fields": [
+            {
+              "id": "kicker_en",
+              "type": "text",
+              "label": "Kicker (EN)"
+            },
+            {
+              "id": "kicker_es",
+              "type": "text",
+              "label": "Kicker (ES)"
+            },
+            {
+              "id": "h2_en",
+              "type": "text",
+              "label": "Heading (EN)"
+            },
+            {
+              "id": "h2_es",
+              "type": "text",
+              "label": "Heading (ES)"
+            },
+            {
+              "id": "p_en",
+              "type": "textarea_html",
+              "label": "Paragraph (EN)"
+            },
+            {
+              "id": "p_es",
+              "type": "textarea_html",
+              "label": "Paragraph (ES)"
+            },
+            {
+              "id": "items_en",
+              "type": "list_text",
+              "label": "Bullet points (EN)"
+            },
+            {
+              "id": "items_es",
+              "type": "list_text",
+              "label": "Bullet points (ES)"
+            },
+            {
+              "id": "btn_en",
+              "type": "text",
+              "label": "Button label (EN)"
+            },
+            {
+              "id": "btn_es",
+              "type": "text",
+              "label": "Button label (ES)"
+            }
+          ]
+        },
+        {
+          "id": "home_classes_head",
+          "path": "home.classes_head",
+          "label": "Classes section header",
+          "fields": [
+            {
+              "id": "kicker_en",
+              "type": "text",
+              "label": "Kicker (EN)"
+            },
+            {
+              "id": "kicker_es",
+              "type": "text",
+              "label": "Kicker (ES)"
+            },
+            {
+              "id": "h2_en",
+              "type": "text",
+              "label": "Heading (EN)"
+            },
+            {
+              "id": "h2_es",
+              "type": "text",
+              "label": "Heading (ES)"
+            },
+            {
+              "id": "p_en",
+              "type": "textarea_html",
+              "label": "Paragraph (EN)"
+            },
+            {
+              "id": "p_es",
+              "type": "textarea_html",
+              "label": "Paragraph (ES)"
+            }
+          ]
+        },
+        {
+          "id": "home_visit",
+          "path": "home.visit",
+          "label": "Visit section header",
+          "fields": [
+            {
+              "id": "kicker_en",
+              "type": "text",
+              "label": "Kicker (EN)"
+            },
+            {
+              "id": "kicker_es",
+              "type": "text",
+              "label": "Kicker (ES)"
+            },
+            {
+              "id": "h2_en",
+              "type": "text",
+              "label": "Heading (EN)"
+            },
+            {
+              "id": "h2_es",
+              "type": "text",
+              "label": "Heading (ES)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "field",
+      "label": "Field / Cancha page",
+      "sections": [
+        {
+          "id": "field_hero",
+          "path": "field",
+          "label": "Hero + booking section",
+          "fields": [
+            {
+              "id": "eyebrow_en",
+              "type": "text",
+              "label": "Eyebrow (EN)"
+            },
+            {
+              "id": "eyebrow_es",
+              "type": "text",
+              "label": "Eyebrow (ES)"
+            },
+            {
+              "id": "h1_en",
+              "type": "textarea_html",
+              "label": "Headline (use <span>) (EN)"
+            },
+            {
+              "id": "h1_es",
+              "type": "textarea_html",
+              "label": "Headline (use <span>) (ES)"
+            },
+            {
+              "id": "lead_en",
+              "type": "textarea_html",
+              "label": "Lead (EN)"
+            },
+            {
+              "id": "lead_es",
+              "type": "textarea_html",
+              "label": "Lead (ES)"
+            },
+            {
+              "id": "whatbook_kicker_en",
+              "type": "text",
+              "label": "\"What you can book\" kicker (EN)"
+            },
+            {
+              "id": "whatbook_kicker_es",
+              "type": "text",
+              "label": "\"What you can book\" kicker (ES)"
+            },
+            {
+              "id": "whatbook_h2_en",
+              "type": "text",
+              "label": "\"What you can book\" heading (EN)"
+            },
+            {
+              "id": "whatbook_h2_es",
+              "type": "text",
+              "label": "\"What you can book\" heading (ES)"
+            },
+            {
+              "id": "cards",
+              "type": "list",
+              "label": "Booking cards",
+              "item_label": "Card",
+              "item_fields": [
+                {
+                  "id": "h_en",
+                  "type": "text",
+                  "label": "Title (EN)"
+                },
+                {
+                  "id": "h_es",
+                  "type": "text",
+                  "label": "Title (ES)"
+                },
+                {
+                  "id": "p_en",
+                  "type": "textarea_html",
+                  "label": "Text (EN)"
+                },
+                {
+                  "id": "p_es",
+                  "type": "textarea_html",
+                  "label": "Text (ES)"
+                }
+              ]
+            },
+            {
+              "id": "footnote_en",
+              "type": "textarea_html",
+              "label": "Footnote (before Hours link) (EN)"
+            },
+            {
+              "id": "footnote_es",
+              "type": "textarea_html",
+              "label": "Footnote (before Hours link) (ES)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gym",
+      "label": "Gym page",
+      "sections": [
+        {
+          "id": "gym_hero",
+          "path": "gym",
+          "label": "Hero",
+          "fields": [
+            {
+              "id": "eyebrow_en",
+              "type": "text",
+              "label": "Eyebrow (EN)"
+            },
+            {
+              "id": "eyebrow_es",
+              "type": "text",
+              "label": "Eyebrow (ES)"
+            },
+            {
+              "id": "h1_en",
+              "type": "textarea_html",
+              "label": "Headline (use <span>) (EN)"
+            },
+            {
+              "id": "h1_es",
+              "type": "textarea_html",
+              "label": "Headline (use <span>) (ES)"
+            },
+            {
+              "id": "lead_en",
+              "type": "textarea_html",
+              "label": "Lead (EN)"
+            },
+            {
+              "id": "lead_es",
+              "type": "textarea_html",
+              "label": "Lead (ES)"
+            }
+          ]
+        },
+        {
+          "id": "gym_main",
+          "path": "gym",
+          "label": "The gym block",
+          "fields": [
+            {
+              "id": "gym_kicker_en",
+              "type": "text",
+              "label": "Kicker (EN)"
+            },
+            {
+              "id": "gym_kicker_es",
+              "type": "text",
+              "label": "Kicker (ES)"
+            },
+            {
+              "id": "gym_h2_en",
+              "type": "text",
+              "label": "Heading (EN)"
+            },
+            {
+              "id": "gym_h2_es",
+              "type": "text",
+              "label": "Heading (ES)"
+            },
+            {
+              "id": "gym_p_en",
+              "type": "textarea_html",
+              "label": "Paragraph (EN)"
+            },
+            {
+              "id": "gym_p_es",
+              "type": "textarea_html",
+              "label": "Paragraph (ES)"
+            },
+            {
+              "id": "gym_items_en",
+              "type": "list_text",
+              "label": "Bullets (EN)"
+            },
+            {
+              "id": "gym_items_es",
+              "type": "list_text",
+              "label": "Bullets (ES)"
+            },
+            {
+              "id": "gym_btn_en",
+              "type": "text",
+              "label": "Button label (EN)"
+            },
+            {
+              "id": "gym_btn_es",
+              "type": "text",
+              "label": "Button label (ES)"
+            },
+            {
+              "id": "gym_imgslot_en",
+              "type": "text",
+              "label": "Image-slot placeholder text (EN)"
+            },
+            {
+              "id": "gym_imgslot_es",
+              "type": "text",
+              "label": "Image-slot placeholder text (ES)"
+            }
+          ]
+        },
+        {
+          "id": "gym_hybrid",
+          "path": "gym",
+          "label": "Hybrid Training block",
+          "fields": [
+            {
+              "id": "hybrid_kicker_en",
+              "type": "text",
+              "label": "Kicker (EN)"
+            },
+            {
+              "id": "hybrid_kicker_es",
+              "type": "text",
+              "label": "Kicker (ES)"
+            },
+            {
+              "id": "hybrid_h2_en",
+              "type": "text",
+              "label": "Heading (EN)"
+            },
+            {
+              "id": "hybrid_h2_es",
+              "type": "text",
+              "label": "Heading (ES)"
+            },
+            {
+              "id": "hybrid_p_en",
+              "type": "textarea_html",
+              "label": "Paragraph (EN)"
+            },
+            {
+              "id": "hybrid_p_es",
+              "type": "textarea_html",
+              "label": "Paragraph (ES)"
+            },
+            {
+              "id": "hybrid_items_en",
+              "type": "list_text",
+              "label": "Bullets (EN)"
+            },
+            {
+              "id": "hybrid_items_es",
+              "type": "list_text",
+              "label": "Bullets (ES)"
+            },
+            {
+              "id": "hybrid_btn_en",
+              "type": "text",
+              "label": "Button label (EN)"
+            },
+            {
+              "id": "hybrid_btn_es",
+              "type": "text",
+              "label": "Button label (ES)"
+            }
+          ]
+        },
+        {
+          "id": "gym_pt",
+          "path": "gym",
+          "label": "Personal training block",
+          "fields": [
+            {
+              "id": "pt_kicker_en",
+              "type": "text",
+              "label": "Kicker (EN)"
+            },
+            {
+              "id": "pt_kicker_es",
+              "type": "text",
+              "label": "Kicker (ES)"
+            },
+            {
+              "id": "pt_h2_en",
+              "type": "text",
+              "label": "Heading (EN)"
+            },
+            {
+              "id": "pt_h2_es",
+              "type": "text",
+              "label": "Heading (ES)"
+            },
+            {
+              "id": "pt_lead_en",
+              "type": "textarea_html",
+              "label": "Lead (EN)"
+            },
+            {
+              "id": "pt_lead_es",
+              "type": "textarea_html",
+              "label": "Lead (ES)"
+            },
+            {
+              "id": "pt_body_en",
+              "type": "textarea_html",
+              "label": "Body (EN)"
+            },
+            {
+              "id": "pt_body_es",
+              "type": "textarea_html",
+              "label": "Body (ES)"
+            },
+            {
+              "id": "pt_wa_label_en",
+              "type": "text",
+              "label": "WhatsApp button label (EN)"
+            },
+            {
+              "id": "pt_wa_label_es",
+              "type": "text",
+              "label": "WhatsApp button label (ES)"
+            },
+            {
+              "id": "pt_link_en",
+              "type": "text",
+              "label": "Details link label (EN)"
+            },
+            {
+              "id": "pt_link_es",
+              "type": "text",
+              "label": "Details link label (ES)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "classes_page",
+      "label": "Classes page",
+      "sections": [
+        {
+          "id": "classes_hero",
+          "path": "classes_page",
+          "label": "Hero + timetable",
+          "fields": [
+            {
+              "id": "eyebrow_en",
+              "type": "text",
+              "label": "Eyebrow (EN)"
+            },
+            {
+              "id": "eyebrow_es",
+              "type": "text",
+              "label": "Eyebrow (ES)"
+            },
+            {
+              "id": "h1_en",
+              "type": "textarea_html",
+              "label": "Headline (use <span>) (EN)"
+            },
+            {
+              "id": "h1_es",
+              "type": "textarea_html",
+              "label": "Headline (use <span>) (ES)"
+            },
+            {
+              "id": "lead_en",
+              "type": "textarea_html",
+              "label": "Lead (EN)"
+            },
+            {
+              "id": "lead_es",
+              "type": "textarea_html",
+              "label": "Lead (ES)"
+            },
+            {
+              "id": "tt_kicker_en",
+              "type": "text",
+              "label": "Timetable kicker (EN)"
+            },
+            {
+              "id": "tt_kicker_es",
+              "type": "text",
+              "label": "Timetable kicker (ES)"
+            },
+            {
+              "id": "tt_h2_en",
+              "type": "text",
+              "label": "Timetable heading (EN)"
+            },
+            {
+              "id": "tt_h2_es",
+              "type": "text",
+              "label": "Timetable heading (ES)"
+            },
+            {
+              "id": "tt_p_en",
+              "type": "textarea_html",
+              "label": "Timetable intro (EN)"
+            },
+            {
+              "id": "tt_p_es",
+              "type": "textarea_html",
+              "label": "Timetable intro (ES)"
+            },
+            {
+              "id": "tt_items_en",
+              "type": "list_text",
+              "label": "Timetable lines (EN)"
+            },
+            {
+              "id": "tt_items_es",
+              "type": "list_text",
+              "label": "Timetable lines (ES)"
+            },
+            {
+              "id": "reserve_note_en",
+              "type": "text",
+              "label": "Reserve note (before WhatsApp link) (EN)"
+            },
+            {
+              "id": "reserve_note_es",
+              "type": "text",
+              "label": "Reserve note (before WhatsApp link) (ES)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hours",
+      "label": "Hours & fees page",
+      "sections": [
+        {
+          "id": "hours_hero",
+          "path": "hours",
+          "label": "Hero + fees",
+          "fields": [
+            {
+              "id": "eyebrow_en",
+              "type": "text",
+              "label": "Eyebrow (EN)"
+            },
+            {
+              "id": "eyebrow_es",
+              "type": "text",
+              "label": "Eyebrow (ES)"
+            },
+            {
+              "id": "h1_en",
+              "type": "textarea_html",
+              "label": "Headline (use <span>) (EN)"
+            },
+            {
+              "id": "h1_es",
+              "type": "textarea_html",
+              "label": "Headline (use <span>) (ES)"
+            },
+            {
+              "id": "lead_en",
+              "type": "textarea_html",
+              "label": "Lead (EN)"
+            },
+            {
+              "id": "lead_es",
+              "type": "textarea_html",
+              "label": "Lead (ES)"
+            },
+            {
+              "id": "fees_kicker_en",
+              "type": "text",
+              "label": "Fees kicker (EN)"
+            },
+            {
+              "id": "fees_kicker_es",
+              "type": "text",
+              "label": "Fees kicker (ES)"
+            },
+            {
+              "id": "fees_h2_en",
+              "type": "text",
+              "label": "Fees heading (EN)"
+            },
+            {
+              "id": "fees_h2_es",
+              "type": "text",
+              "label": "Fees heading (ES)"
+            },
+            {
+              "id": "caption_en",
+              "type": "text",
+              "label": "Table caption (EN)"
+            },
+            {
+              "id": "caption_es",
+              "type": "text",
+              "label": "Table caption (ES)"
+            },
+            {
+              "id": "rows",
+              "type": "list",
+              "label": "Fee rows",
+              "item_label": "Row",
+              "item_fields": [
+                {
+                  "id": "a_en",
+                  "type": "text",
+                  "label": "Item (EN)"
+                },
+                {
+                  "id": "a_es",
+                  "type": "text",
+                  "label": "Item (ES)"
+                },
+                {
+                  "id": "b_en",
+                  "type": "text",
+                  "label": "Detail (EN)"
+                },
+                {
+                  "id": "b_es",
+                  "type": "text",
+                  "label": "Detail (ES)"
+                },
+                {
+                  "id": "c_en",
+                  "type": "text",
+                  "label": "Price (EN)"
+                },
+                {
+                  "id": "c_es",
+                  "type": "text",
+                  "label": "Price (ES)"
+                }
+              ]
+            },
+            {
+              "id": "note_en",
+              "type": "textarea_html",
+              "label": "Note under table (EN)"
+            },
+            {
+              "id": "note_es",
+              "type": "textarea_html",
+              "label": "Note under table (ES)"
+            },
+            {
+              "id": "visit_kicker_en",
+              "type": "text",
+              "label": "Visit kicker (EN)"
+            },
+            {
+              "id": "visit_kicker_es",
+              "type": "text",
+              "label": "Visit kicker (ES)"
+            },
+            {
+              "id": "visit_h2_en",
+              "type": "text",
+              "label": "Visit heading (EN)"
+            },
+            {
+              "id": "visit_h2_es",
+              "type": "text",
+              "label": "Visit heading (ES)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "class_list",
+      "label": "Classes (detail pages)",
+      "sections": [
+        {
+          "id": "classes",
+          "path": "classes",
+          "label": "Class detail pages",
+          "type": "list_root",
+          "item_label": "Class",
+          "summary_field": "en",
+          "item_fields": [
+            {
+              "id": "en",
+              "type": "text",
+              "label": "Name (EN)"
+            },
+            {
+              "id": "es",
+              "type": "text",
+              "label": "Name (ES)"
+            },
+            {
+              "id": "tag_en",
+              "type": "text",
+              "label": "Tagline (EN)"
+            },
+            {
+              "id": "tag_es",
+              "type": "text",
+              "label": "Tagline (ES)"
+            },
+            {
+              "id": "desc_en",
+              "type": "textarea_html",
+              "label": "Description (EN)"
+            },
+            {
+              "id": "desc_es",
+              "type": "textarea_html",
+              "label": "Description (ES)"
+            },
+            {
+              "id": "sched_en",
+              "type": "text",
+              "label": "Schedule (EN)"
+            },
+            {
+              "id": "sched_es",
+              "type": "text",
+              "label": "Schedule (ES)"
+            },
+            {
+              "id": "inst",
+              "type": "text",
+              "label": "Instructor"
+            },
+            {
+              "id": "level_en",
+              "type": "text",
+              "label": "Level (EN)"
+            },
+            {
+              "id": "level_es",
+              "type": "text",
+              "label": "Level (ES)"
+            },
+            {
+              "id": "price_en",
+              "type": "text",
+              "label": "Price (EN)"
+            },
+            {
+              "id": "price_es",
+              "type": "text",
+              "label": "Price (ES)"
+            },
+            {
+              "id": "wa",
+              "type": "text",
+              "label": "WhatsApp link"
+            },
+            {
+              "id": "wal_en",
+              "type": "text",
+              "label": "WhatsApp label (EN)"
+            },
+            {
+              "id": "wal_es",
+              "type": "text",
+              "label": "WhatsApp label (ES)"
+            },
+            {
+              "id": "img",
+              "type": "text",
+              "label": "Image filename (assets/img/)"
+            },
+            {
+              "id": "slug_en",
+              "type": "text",
+              "label": "URL slug (EN)"
+            },
+            {
+              "id": "slug_es",
+              "type": "text",
+              "label": "URL slug (ES)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
