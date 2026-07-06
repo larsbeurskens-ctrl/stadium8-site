@@ -2,7 +2,7 @@
 # Stadium 8 multi-page static site generator (EN + ES). Content-driven: all copy lives in content.json.
 import pathlib, json
 
-ROOT = pathlib.Path("/Users/larsbeurskens/Documents/stadium8-site")
+ROOT = pathlib.Path(__file__).resolve().parent
 SITE = "https://stadium8.com"
 CSSV = "5"
 
