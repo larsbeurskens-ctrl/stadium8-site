@@ -1,8 +1,8 @@
 // Vercel build step: pull saved content from Upstash KV into content.json, then build.py renders from it.
 // Falls back silently to the git-committed content.json if KV is empty/unconfigured. Never fails the build.
 import fs from 'node:fs';
-const KV_URL = process.env.KV_REST_API_URL || '';
-const KV_TOKEN = process.env.KV_REST_API_TOKEN || '';
+const KV_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || '';
+const KV_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || '';
 const SITE_KEY = process.env.SITE_KEY || 'stadium8';
 const KEY = `${SITE_KEY}:content`;
 

@@ -3,8 +3,8 @@
 import crypto from 'crypto';
 
 const JWT_SECRET     = process.env.JWT_SECRET || '';
-const KV_URL         = process.env.KV_REST_API_URL || '';
-const KV_TOKEN       = process.env.KV_REST_API_TOKEN || '';
+const KV_URL         = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || '';
+const KV_TOKEN       = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || '';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '';
 const SITE_KEY       = process.env.SITE_KEY || 'stadium8';
 const DEPLOY_HOOK    = process.env.DEPLOY_HOOK_URL || '';
