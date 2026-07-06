@@ -13,6 +13,7 @@ export default async function handler(req, res) {
       matchesTrimmed: p ? (p.trim() === 'stadium8-2026') : false,
       jwtSet: !!process.env.JWT_SECRET,
       kvSet: !!(process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL),
+      kvKeys: Object.keys(process.env).filter(k => /KV|REDIS|UPSTASH|STORAGE/i.test(k)),
     });
     return;
   }
