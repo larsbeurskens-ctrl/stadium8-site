@@ -59,7 +59,13 @@
       <span class="kicker">Reserve online</span>
       <h3>Book the field</h3>
       <p>Choose football, open-court sports or a birthday party, pick your time and you're set. Pay cash on the day - no card needed.</p>
-      <div class="cal-placeholder">Booking calendar loads here once the Stadium 8 Google Calendar (stadiumcr@gmail.com) is connected to Cal.com.<br />Coming in the next build step.</div>
+      <div style="width:100%;min-height:660px;overflow:auto;border-radius:14px;background:#fff;padding:4px" id="cal-cancha"></div>
+<script type="text/javascript">
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "cancha", { origin: "https://cal.com" });
+Cal.ns.cancha("inline", { elementOrSelector: "#cal-cancha", config: { layout: "month_view" }, calLink: "stadium8/cancha" });
+Cal.ns.cancha("ui", { hideEventTypeDetails: false, layout: "month_view", cssVarsPerTheme: { light: { "cal-brand": "#F5B400" } } });
+</script>
       <p style="margin-top:1.4rem">Prefer to message us? <a class="yellow" href="https://wa.me/50686364357" style="font-weight:700">WhatsApp +506 8636 4357 &rarr;</a></p>
     </div>
   </div>

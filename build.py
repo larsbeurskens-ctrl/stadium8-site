@@ -107,19 +107,31 @@ def render(path, alt_path, lang, active, title, desc, body, schema=""):
 print("chrome loaded")
 
 # ====================== SHARED CONTENT BLOCKS ======================
-def book_block(lang):
+# Cal.com inline embed for the cancha booking (plain string: JS braces must not be f-string-interpolated)
+CAL_EMBED = '''<div style="width:100%;min-height:660px;overflow:auto;border-radius:14px;background:#fff;padding:4px" id="cal-cancha"></div>
+<script type="text/javascript">
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "cancha", { origin: "https://cal.com" });
+Cal.ns.cancha("inline", { elementOrSelector: "#cal-cancha", config: { layout: "month_view" }, calLink: "stadium8/cancha" });
+Cal.ns.cancha("ui", { hideEventTypeDetails: false, layout: "month_view", cssVarsPerTheme: { light: { "cal-brand": "#F5B400" } } });
+</script>'''
+
+def book_block(lang, embed=False):
     s = C["shared"]["book"]; L = lang
-    placeholder = ('Booking calendar loads here once the Stadium 8 Google Calendar (stadiumcr@gmail.com) is connected to Cal.com.<br />Coming in the next build step.' if lang=="en"
-      else 'El calendario de reservas carga acá una vez que el Google Calendar de Stadium 8 (stadiumcr@gmail.com) esté conectado a Cal.com.<br />Llega en el próximo paso del build.')
     msg = (f'Prefer to message us? <a class="yellow" href="{WA}" style="font-weight:700">WhatsApp {PHONE} &rarr;</a>' if lang=="en"
       else f'¿Mejor por mensaje? <a class="yellow" href="{WA}" style="font-weight:700">WhatsApp {PHONE} &rarr;</a>')
+    bhref, blabel = BOOK[L]
+    if embed:
+        inner = CAL_EMBED
+    else:
+        inner = f'<a href="{bhref}" class="btn btn-y" style="margin-top:.2rem">{blabel} &rarr;</a>'
     return f'''<section class="book-sec" id="book">
   <div class="wrap">
     <div class="bookbox">
       <span class="kicker">{s["kicker_"+L]}</span>
       <h3>{s["h3_"+L]}</h3>
       <p>{s["p_"+L]}</p>
-      <div class="cal-placeholder">{placeholder}</div>
+      {inner}
       <p style="margin-top:1.4rem">{msg}</p>
     </div>
   </div>
@@ -294,7 +306,7 @@ def field(lang):
     <p style="color:var(--muted);margin-top:1.6rem">{F["footnote_"+L]}<a class="yellow" href="{hours_link}">{hours_label}</a>.</p>
   </div>
 </section>
-{book_block(lang)}'''
+{book_block(lang, embed=True)}'''
 
 def gym(lang):
     G = C["gym"]; L = lang
