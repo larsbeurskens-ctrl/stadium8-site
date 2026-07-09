@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Stadium 8 multi-page static site generator (EN + ES). Content-driven: all copy lives in content.json.
-import pathlib, json
+import pathlib, re, json
 
 ROOT = pathlib.Path(__file__).resolve().parent
 SITE = "https://stadium8.com"
@@ -63,6 +63,7 @@ def nav(active, lang, alt_path, path):
         langtog = f'<a href="{alt_path}">EN</a>/<a class="on" href="{path}">ES</a>'
     drawer = "".join(f'<a href="{href}" style="display:block;padding:10px 0">{label}</a>' for _,label,href in NAV[lang])
     drawer += f'<a href="{bhref}" style="display:block;padding:10px 0;color:var(--yellow);font-weight:700">{blabel}</a>'
+    drawer += f'<div class="lang" style="padding:14px 0 2px;font-size:.95rem">{langtog}</div>'
     return f'''<header>
   <div class="wrap">
     <nav>
@@ -106,6 +107,16 @@ def render(path, alt_path, lang, active, title, desc, body, schema=""):
 
 print("chrome loaded")
 
+def wa_number(wa_link):
+    m = re.search(r"wa\.me/506(\d{8})", wa_link or "")
+    return f"+506 {m.group(1)[:4]} {m.group(1)[4:]}" if m else ""
+
+def wa_cta_label(inst, lang):
+    first = re.split(r"\s*[-,]\s*", (inst or "").strip())[0].strip()
+    if not first or re.search(r"studio|team|center|centre|wellness|stadium", first, re.I):
+        return "WhatsApp to reserve" if lang=="en" else "WhatsApp para reservar"
+    return "WhatsApp " + first.split()[0]
+
 # ====================== SHARED CONTENT BLOCKS ======================
 # Cal.com inline embed for the cancha booking (plain string: JS braces must not be f-string-interpolated)
 CAL_EMBED = '''<div style="width:100%;min-height:660px;overflow:auto;border-radius:14px;background:#fff;padding:4px" id="cal-cancha"></div>
@@ -118,8 +129,8 @@ Cal.ns.cancha("ui", { hideEventTypeDetails: false, layout: "month_view", cssVars
 
 def book_block(lang, embed=False):
     s = C["shared"]["book"]; L = lang
-    msg = (f'Prefer to message us? <a class="yellow" href="{WA}" style="font-weight:700">WhatsApp {PHONE} &rarr;</a>' if lang=="en"
-      else f'¿Mejor por mensaje? <a class="yellow" href="{WA}" style="font-weight:700">WhatsApp {PHONE} &rarr;</a>')
+    msg = (f'Prefer to message us? <a class="yellow" href="{WA}" style="font-weight:700">WhatsApp us &rarr;</a>' if lang=="en"
+      else f'¿Mejor por mensaje? <a class="yellow" href="{WA}" style="font-weight:700">Escribinos por WhatsApp &rarr;</a>')
     bhref, blabel = BOOK[L]
     if embed:
         inner = CAL_EMBED
@@ -184,7 +195,7 @@ def class_detail(c, lang):
     T = C["class_labels"][lang]
     back = LINKS[lang]["classes"]; back_label = T["back"]
     desc=c["desc_"+lang]; sched=c["sched_"+lang]; inst=c["inst"]; level=c["level_"+lang]; price=c["price_"+lang]
-    wa=c["wa"]; wal=c["wal_"+lang]
+    wa=c["wa"]; wal=c["wal_"+lang]; wal_clean=wa_cta_label(c.get("inst",""), lang); wa_num=wa_number(wa)
     _img=c.get("img","")
     img_html = (f'<img src="/assets/img/{_img.replace(" ","%20")}" alt="{name}" loading="lazy" style="width:100%;max-height:460px;object-fit:contain;background:#0E0E0E;border-radius:14px;display:block;margin-bottom:1.4rem;border:1px solid rgba(255,255,255,.08)" />' if (_img and (ROOT/"assets/img"/_img).exists()) else "")
     return f'''<section class="subhero">
@@ -202,8 +213,9 @@ def class_detail(c, lang):
       <span class="kicker">{T["about"]}</span>
       <h2 style="color:#fff;font-size:clamp(1.7rem,3.5vw,2.4rem);margin:.4rem 0 1rem">{name}</h2>
       <p>{desc}</p>
-      <a href="{wa}" class="btn btn-y" style="margin-top:1.6rem">{wal} &rarr;</a>
-      <p style="color:var(--muted);font-size:.9rem;margin-top:1rem">{T["note"]}</p>
+      <a href="{wa}" class="btn btn-y" style="margin-top:1.6rem">{wal_clean} &rarr;</a>
+      <p style="color:var(--muted);font-size:.85rem;margin-top:.9rem">{wa_num}</p>
+      <p style="color:var(--muted);font-size:.9rem;margin-top:.6rem">{T["note"]}</p>
     </div>
     <div class="detail-card">
       <span class="kicker">{T["details"]}</span>
@@ -299,14 +311,14 @@ def field(lang):
     <p class="lead">{F["lead_"+L]}</p>
   </div>
 </section>
+{book_block(lang, embed=True)}
 <section>
   <div class="wrap">
     <div class="sec-head"><span class="kicker">{F["whatbook_kicker_"+L]}</span><h2>{F["whatbook_h2_"+L]}</h2></div>
-    <div class="cards" style="grid-template-columns:repeat(3,1fr)">{ch}</div>
+    <div class="cards">{ch}</div>
     <p style="color:var(--muted);margin-top:1.6rem">{F["footnote_"+L]}<a class="yellow" href="{hours_link}">{hours_label}</a>.</p>
   </div>
-</section>
-{book_block(lang, embed=True)}'''
+</section>'''
 
 def gym(lang):
     G = C["gym"]; L = lang
@@ -314,7 +326,8 @@ def gym(lang):
     hybrid_link = LINKS[L]["classes"] + hyb["slug_"+L] + "/"
     pt_link_href = LINKS[L]["classes"] + pt["slug_"+L] + "/"
     noe_alt = "Hybrid Training with Noe - Samara Workout" if lang=="en" else "Entrenamiento Híbrido con Noe - Samara Workout"
-    return f'''<section class="subhero">
+    return f'''<section class="subhero has-photo">
+  <img class="subhero-photo" src="/assets/img/gym-stadium8.jpg" alt="{G["h1_"+L]}" />
   <span class="eight">8</span>
   <div class="wrap subhero-inner">
     <span class="eyebrow">{G["eyebrow_"+L]}</span>
@@ -331,7 +344,7 @@ def gym(lang):
       <ul class="feat-list">{feat_lis(G["gym_items_"+L])}</ul>
       <a href="{LINKS[L]["hours"]}" class="btn btn-y" style="margin-top:1.6rem">{G["gym_btn_"+L]}</a>
     </div>
-    <div class="imgslot">{G["gym_imgslot_"+L]}</div>
+    <div class="imgslot" style="padding:0;overflow:hidden"><img src="/assets/img/gym-stadium8.jpg" alt="{G["gym_h2_"+L]}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
   </div>
 </section>
 <section style="background:#0E0E0E">
@@ -350,8 +363,9 @@ def gym(lang):
   <div class="wrap">
     <div class="sec-head"><span class="kicker">{G["pt_kicker_"+L]}</span><h2>{G["pt_h2_"+L]}</h2><p>{G["pt_lead_"+L]}</p></div>
     <p style="color:var(--muted);max-width:640px">{G["pt_body_"+L]}</p>
-    <a href="https://wa.me/50683423808" class="btn btn-y" style="margin-top:1.4rem">{G["pt_wa_label_"+L]}</a>
+    <a href="https://wa.me/50683423808" class="btn btn-y" style="margin-top:1.4rem">WhatsApp Jeffry &rarr;</a>
     <a href="{pt_link_href}" style="display:inline-block;margin:1.4rem 0 0 1rem;color:var(--yellow);font-weight:700">{G["pt_link_"+L]}</a>
+    <p style="color:var(--muted);font-size:.85rem;margin-top:.9rem">+506 8342 3808</p>
   </div>
 </section>'''
 
@@ -372,7 +386,7 @@ def classes_page(lang):
     <div class="sec-head" style="margin-top:3rem"><span class="kicker">{P["tt_kicker_"+L]}</span><h2>{P["tt_h2_"+L]}</h2></div>
     <p style="color:var(--muted)">{P["tt_p_"+L]}</p>
     <ul class="feat-list" style="margin-top:1rem">{tt}</ul>
-    <p style="color:var(--muted);margin-top:1rem">{P["reserve_note_"+L]} <a class="yellow" href="{WA}" style="font-weight:700">WhatsApp {PHONE} &rarr;</a></p>
+    <p style="color:var(--muted);margin-top:1rem">{P["reserve_note_"+L]} <a class="yellow" href="{WA}" style="font-weight:700">{"WhatsApp us" if lang=="en" else "Escribinos por WhatsApp"} &rarr;</a></p>
   </div>
 </section>'''
 
