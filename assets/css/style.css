@@ -32,6 +32,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:70px}
 .lang a:hover{color:var(--yellow)}
 .lang a.on{color:var(--yellow)}
 .menubtn{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+.lang-m{display:none}
 
 /* HERO */
 .hero{position:relative;overflow:hidden;background:#0B0B0B;padding:92px 0 86px}
@@ -140,6 +141,7 @@ footer a:hover{color:var(--yellow)}
 @media(max-width:900px){
   .navlinks{display:none}
   .menubtn{display:block}
+  .lang-m{display:flex;margin-left:auto;margin-right:.9rem;font-size:.9rem}
   .cards{grid-template-columns:1fr 1fr}
   .classgrid{grid-template-columns:1fr 1fr}
   .split{grid-template-columns:1fr}
@@ -180,13 +182,14 @@ footer a:hover{color:var(--yellow)}
 /* ===== Stadium 8 mobile/UX pass ===== */
 /* Cal.com booking embed: more room on mobile */
 @media(max-width:560px){
-  .book-sec .wrap{padding-left:10px;padding-right:10px}
+  .book-sec .wrap{padding-left:5px;padding-right:5px}
+  .book-sec .bookbox{padding:18px 4px;border:none;background:transparent;border-radius:0}
   #cal-cancha{min-height:780px;padding:0}
 }
 /* Hours/fees table: stack into readable cards on mobile */
 @media(max-width:560px){
   .ptable,.ptable tbody,.ptable tr,.ptable td{display:block;width:100%}
-  .ptable caption{padding-bottom:.5rem}
+  .ptable caption{display:block;text-align:left;padding:0 0 .8rem;font-size:.72rem}
   .ptable tr{padding:.85rem 1rem;border-bottom:1px solid var(--line)}
   .ptable tr:last-child{border-bottom:0}
   .ptable td{padding:.12rem 0;border:0;font-size:.95rem}

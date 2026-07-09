@@ -30,6 +30,7 @@
         <a href="/es/cancha/#book" class="btn btn-y" style="padding:.6rem 1.1rem">Reservar la cancha</a>
         <span class="lang"><a href="/field/">EN</a>/<a class="on" href="/es/cancha/">ES</a></span>
       </div>
+      <span class="lang lang-m"><a href="/field/">EN</a>/<a class="on" href="/es/cancha/">ES</a></span>
       <button class="menubtn" aria-label="Menu" onclick="var m=document.getElementById('m');m.style.display=m.style.display==='block'?'none':'block'">&#9776;</button>
     </nav>
   </div>
@@ -46,13 +47,6 @@
     <p class="lead">Reservá la cancha de fútbol, deportes de cancha o un cumpleaños - elegí tu hora y pagás en efectivo el mismo día.</p>
   </div>
 </section>
-<section>
-  <div class="wrap">
-    <div class="sec-head"><span class="kicker">Qué podés reservar</span><h2>Una cancha, todos los juegos</h2></div>
-    <div class="cards" style="grid-template-columns:repeat(3,1fr)"><div class="card"><div><h3>Fútbol 5</h3><p>Cinco contra cinco (5v5) para hombres, mujeres y niños. ₡10.000 por equipo o ₡20.000 por hora. Reservá por WhatsApp, planeá en línea y buscá reto.</p></div></div><div class="card"><div><h3>Deportes de cancha</h3><p>Voleibol, bádminton, handball, ultimate frisbee, atletismo, fútbol-tenis o cancha libre. ₡2.000 por persona.</p></div></div><div class="card"><div><h3>Cumpleaños y eventos</h3><p>Cumpleaños y eventos privados - la cancha, el espacio y la energía. El precio depende del evento.</p></div></div></div>
-    <p style="color:var(--muted);margin-top:1.6rem">Fútbol 5: ₡10.000/equipo o ₡20.000/hora · Deportes de cancha: ₡2.000/persona · Cumpleaños y eventos: precio a consultar. Lista completa en <a class="yellow" href="/es/horarios/">Horarios y precios</a>.</p>
-  </div>
-</section>
 <section class="book-sec" id="book">
   <div class="wrap">
     <div class="bookbox">
@@ -66,8 +60,15 @@ Cal("init", "cancha", { origin: "https://cal.com" });
 Cal.ns.cancha("inline", { elementOrSelector: "#cal-cancha", config: { layout: "month_view" }, calLink: "stadium8/cancha" });
 Cal.ns.cancha("ui", { hideEventTypeDetails: false, layout: "month_view", cssVarsPerTheme: { light: { "cal-brand": "#F5B400" } } });
 </script>
-      <p style="margin-top:1.4rem">¿Mejor por mensaje? <a class="yellow" href="https://wa.me/50686364357" style="font-weight:700">WhatsApp +506 8636 4357 &rarr;</a></p>
+      <p style="margin-top:1.4rem">¿Mejor por mensaje? <a class="yellow" href="https://wa.me/50686364357" style="font-weight:700">Escribinos por WhatsApp &rarr;</a></p>
     </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">Qué podés reservar</span><h2>Una cancha, todos los juegos</h2></div>
+    <div class="cards"><div class="card"><div><h3>Fútbol 5</h3><p>Cinco contra cinco (5v5) para hombres, mujeres y niños. ₡10.000 por equipo o ₡20.000 por hora. Reservá por WhatsApp, planeá en línea y buscá reto.</p></div></div><div class="card"><div><h3>Deportes de cancha</h3><p>Voleibol, bádminton, handball, ultimate frisbee, atletismo, fútbol-tenis o cancha libre. ₡2.000 por persona.</p></div></div><div class="card"><div><h3>Cumpleaños y eventos</h3><p>Cumpleaños y eventos privados - la cancha, el espacio y la energía. El precio depende del evento.</p></div></div></div>
+    <p style="color:var(--muted);margin-top:1.6rem">Fútbol 5: ₡10.000/equipo o ₡20.000/hora · Deportes de cancha: ₡2.000/persona · Cumpleaños y eventos: precio a consultar. Lista completa en <a class="yellow" href="/es/horarios/">Horarios y precios</a>.</p>
   </div>
 </section>
 <footer>

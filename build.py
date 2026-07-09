@@ -63,7 +63,6 @@ def nav(active, lang, alt_path, path):
         langtog = f'<a href="{alt_path}">EN</a>/<a class="on" href="{path}">ES</a>'
     drawer = "".join(f'<a href="{href}" style="display:block;padding:10px 0">{label}</a>' for _,label,href in NAV[lang])
     drawer += f'<a href="{bhref}" style="display:block;padding:10px 0;color:var(--yellow);font-weight:700">{blabel}</a>'
-    drawer += f'<div class="lang" style="padding:14px 0 2px;font-size:.95rem">{langtog}</div>'
     return f'''<header>
   <div class="wrap">
     <nav>
@@ -73,6 +72,7 @@ def nav(active, lang, alt_path, path):
         <a href="{bhref}" class="btn btn-y" style="padding:.6rem 1.1rem">{blabel}</a>
         <span class="lang">{langtog}</span>
       </div>
+      <span class="lang lang-m">{langtog}</span>
       <button class="menubtn" aria-label="Menu" onclick="var m=document.getElementById('m');m.style.display=m.style.display==='block'?'none':'block'">&#9776;</button>
     </nav>
   </div>
