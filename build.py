@@ -3,7 +3,7 @@
 import pathlib, re, json
 
 ROOT = pathlib.Path(__file__).resolve().parent
-SITE = "https://stadium8.com"
+SITE = "https://stadium-8.com"
 CSSV = "5"
 
 C = json.loads((ROOT / "content.json").read_text(encoding="utf-8"))
@@ -423,10 +423,10 @@ SCHEMA = '''<script type="application/ld+json">
   "@type": "SportsActivityLocation",
   "name": "Stadium 8 Sport Center",
   "description": "Multi-sport facility in Samara, Costa Rica - football field, full gym, group classes, personal training and birthday parties.",
-  "image": "https://stadium8.com/assets/img/logo.png",
+  "image": "https://stadium-8.com/assets/img/logo.png",
   "telephone": "+506 8636 4357",
   "email": "stadium8sportcenter@gmail.com",
-  "url": "https://stadium8.com/",
+  "url": "https://stadium-8.com/",
   "address": {"@type": "PostalAddress","streetAddress": "600m West of Super Iguana Verde, Route 160","addressLocality": "Samara","addressRegion": "Guanacaste","addressCountry": "CR"},
   "sameAs": ["https://www.instagram.com/stadium.8","https://www.facebook.com/stadium8samara/"]
 }
