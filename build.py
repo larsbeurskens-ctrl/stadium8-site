@@ -468,3 +468,28 @@ for path,alt,lang,active,title,desc,body,schema in pages:
 
 print(f"\n{len(written)} pages generated:")
 for w in written: print("  ", w)
+
+# ====================== SITEMAP + ROBOTS ======================
+def _esc(u): return u.replace("&","&amp;")
+
+sm = ['<?xml version="1.0" encoding="UTF-8"?>',
+      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+for path,alt,lang,active,title,desc,body,schema in pages:
+    en_p = path if lang=="en" else alt
+    es_p = path if lang=="es" else alt
+    sm.append("  <url>")
+    sm.append(f"    <loc>{_esc(SITE+path)}</loc>")
+    sm.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{_esc(SITE+en_p)}"/>')
+    sm.append(f'    <xhtml:link rel="alternate" hreflang="es" href="{_esc(SITE+es_p)}"/>')
+    sm.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{_esc(SITE+en_p)}"/>')
+    sm.append("  </url>")
+sm.append("</urlset>")
+(ROOT / "sitemap.xml").write_text("\n".join(sm) + "\n", encoding="utf-8")
+
+(ROOT / "robots.txt").write_text(
+    "User-agent: *\n"
+    "Allow: /\n\n"
+    f"Sitemap: {SITE}/sitemap.xml\n",
+    encoding="utf-8")
+
+print(f"\nsitemap.xml ({len(pages)} urls) + robots.txt written")

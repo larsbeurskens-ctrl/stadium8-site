@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://stadium-8.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/field/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/field/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/cancha/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/field/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/es/cancha/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/field/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/cancha/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/field/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/gym/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/gym/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/gimnasio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/gym/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/es/gimnasio/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/gym/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/gimnasio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/gym/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/classes/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/classes/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/clases/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/classes/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/es/clases/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/classes/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/clases/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/classes/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/hours/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/hours/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/horarios/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/hours/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/es/horarios/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/hours/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/horarios/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/hours/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/classes/hybrid-training/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/classes/hybrid-training/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/clases/entrenamiento-hibrido/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/classes/hybrid-training/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/es/clases/entrenamiento-hibrido/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/classes/hybrid-training/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/clases/entrenamiento-hibrido/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/classes/hybrid-training/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/classes/martial-arts/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/classes/martial-arts/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/clases/artes-marciales/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/classes/martial-arts/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/es/clases/artes-marciales/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/classes/martial-arts/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/clases/artes-marciales/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/classes/martial-arts/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/classes/pilates-reformer/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/classes/pilates-reformer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/clases/pilates-reformer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/classes/pilates-reformer/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/es/clases/pilates-reformer/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/classes/pilates-reformer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/clases/pilates-reformer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/classes/pilates-reformer/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/classes/spinning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/classes/spinning/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/clases/spinning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/classes/spinning/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/es/clases/spinning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/classes/spinning/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/clases/spinning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/classes/spinning/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/classes/aerial-silk/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/classes/aerial-silk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/clases/acrobacia-aerea/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/classes/aerial-silk/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/es/clases/acrobacia-aerea/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/classes/aerial-silk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/clases/acrobacia-aerea/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/classes/aerial-silk/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/classes/personal-training/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/classes/personal-training/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/clases/entrenamiento-personal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/classes/personal-training/"/>
+  </url>
+  <url>
+    <loc>https://stadium-8.com/es/clases/entrenamiento-personal/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stadium-8.com/classes/personal-training/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stadium-8.com/es/clases/entrenamiento-personal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stadium-8.com/classes/personal-training/"/>
+  </url>
+</urlset>

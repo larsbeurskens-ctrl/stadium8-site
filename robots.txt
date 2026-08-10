@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stadium-8.com/sitemap.xml
